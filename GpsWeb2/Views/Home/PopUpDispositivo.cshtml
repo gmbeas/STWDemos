@@ -1,0 +1,277 @@
+﻿
+@{
+    Layout = null;
+    Layout = "~/Views/Shared/_Empty.cshtml";
+}
+
+<div id="popupmap" style="width: 600px; height: 600px;"></div>
+
+
+@section PageScripts{
+    <style>
+        .labelsx {
+   color: red;
+   background-color: white;
+   font-family: "Lucida Grande", "Arial", sans-serif;
+   font-size: 10px;
+   font-weight: bold;
+   text-align: center;
+   width: 60px;     
+   border: 2px solid black;
+   white-space: nowrap;
+ }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3&sensor=false&libraries=drawing"></script>
+    <script src="http://google-maps-utility-library-v3.googlecode.com/svn/tags/markerwithlabel/1.1.9/src/markerwithlabel.js"></script>
+    <script src="http://underscorejs.org/underscore-min.js"></script>
+
+<script>
+    var mapOverlays = [];
+    var selectedShape;
+    var drawingManager;
+    var markerStore = {};
+    var mapPopUp;
+    var infoWindow;
+    var htmlUpdate = {};
+    var centerid = 0;
+    var contador = true;
+    var bermudaTriangle;
+
+    $(document).ready(function () {
+
+        //Time between marker refreshes
+        var interval = 5000;
+
+        //Used to remember markers
+
+
+        var myLatlng = new google.maps.LatLng(-33.617859, -71.576181);
+        var myOptions = {
+            zoom: 5,
+            center: myLatlng,
+            mapTypeId: google.maps.MapTypeId.SATELLITE
+        }
+        mapPopUp = new google.maps.Map(document.getElementById("popupmap"), myOptions);
+       
+       
+
+        var infoWindow = new google.maps.InfoWindow;
+
+
+        function getMarkers() {
+            //console.log('getMarkers');
+            $.get('@Url.Action("GetMarkerPopUpId", "Home", new { id = ViewBag.idDispositivo })', {}, function (res) {
+
+                var latlngbounds = new google.maps.LatLngBounds();
+
+                for (var i = 0; i < res.length; i++) {
+                    var iconx = '@Url.Content("~/assets/img/truck/truck-comodin.png")';
+
+                    var iconDetenido = '@Url.Content("~/assets/img/truck/truck-detenido.png")';
+                    var imageDetenido = {
+                        url: iconDetenido,
+                        // This marker is 20 pixels wide by 32 pixels tall.
+                        size: new google.maps.Size(32, 37),
+                        // The origin for this image is 0,0.
+                        origin: new google.maps.Point(0, 0),
+                        // The anchor for this image is the base of the flagpole at 0,32.
+                        anchor: new google.maps.Point(0, 32)
+                    };
+
+                    var iconSinInfo = '@Url.Content("~/assets/img/truck/truck-sininfo.png")';
+                    var imageSinInfo = {
+                        url: iconSinInfo,
+                        // This marker is 20 pixels wide by 32 pixels tall.
+                        size: new google.maps.Size(32, 37),
+                        // The origin for this image is 0,0.
+                        origin: new google.maps.Point(0, 0),
+                        // The anchor for this image is the base of the flagpole at 0,32.
+                        anchor: new google.maps.Point(0, 32)
+                    };
+
+                    var icon = iconx.replace('comodin', res[i].Color); // + res[i].Icono;
+                    var image = {
+                        url: icon,
+                        // This marker is 20 pixels wide by 32 pixels tall.
+                        size: new google.maps.Size(32, 37),
+                        // The origin for this image is 0,0.
+                        origin: new google.maps.Point(0, 0),
+                        // The anchor for this image is the base of the flagpole at 0,32.
+                        anchor: new google.maps.Point(0, 32)
+                    };
+
+                    var date = new Date(res[i].FechaHora);
+                    var fechaUltima = formatDate(date, 5);
+
+                    var na = GetDireccion(res[i].Curso);
+                    
+                    var ui = parseFloat(res[i].Velocidad);
+                    var velocidadF = Math.round(ui * 100) / 100;
+                    var html =
+                        "<div style='width: 230px; height: 120px; overflow-x: hidden;'>" +
+                            "<div class='row'>" +
+                            "<div class='col-lg-12'>" +
+                            "<b>" + "DeviceID: " + res[i].Patente + "</b>" +
+                            "</div>" +
+                            "<div class='col-lg-12'>" +
+                            "Velocidad: " + velocidadF + " Km/h" +
+                            "</div>" +
+                            "<div class='col-lg-12'>" +
+                            "Fecha/Hora: " + fechaUltima +
+                            "</div>" +
+                            "<div class='col-lg-12'>" +
+                            "Dirección: " + na +
+                            "</div>" +
+                            "</div>" +
+                            "</div>";
+
+
+                    //Do we have this marker already? any marker not worker!!!
+                    if (markerStore.hasOwnProperty(res[i].Id)) {
+                        markerStore[res[i].Id].setPosition(new google.maps.LatLng(res[i].Latitud, res[i].Longitud));
+
+                            if (res[i].Estado == 2) {
+                                markerStore[res[i].Id].setIcon(imageDetenido);
+                            } else if (res[i].Estado == 5) {
+                                markerStore[res[i].Id].setIcon(imageSinInfo);
+                            } else if (res[i].Estado == 1) {
+                                markerStore[res[i].Id].setIcon(image);
+                            }
+                            mapPopUp.setCenter(markerStore[res[i].Id].getPosition());
+                            //bindInfoWindowOpen(markerStore[res[i].Id], mapPopUp, infoWindow, html);
+
+                    } else {
+                        latlngbounds.extend(new google.maps.LatLng(res[i].Latitud, res[i].Longitud));
+
+                        var marker = new MarkerWithLabel({
+                            position: new google.maps.LatLng(res[i].Latitud, res[i].Longitud),
+                            title: res[i].name,
+                            map: mapPopUp,
+                            icon: image,
+                            labelContent: res[i].Patente,
+                            labelAnchor: new google.maps.Point(15, -2),
+                            labelClass: "labelsx", // the CSS class for the label</b>
+                            labelStyle: { opacity: 0.75 }
+
+                        });
+                        bindInfoWindow(marker, mapPopUp, infoWindow, html);
+                        markerStore[res[i].Id] = marker;
+
+                    }
+                }
+                //if (contador == true) {
+                //    contador = false;
+                //    mapPopUp.fitBounds(latlngbounds);
+                //}
+                window.setTimeout(getMarkers, interval);
+            }, "json");
+        }
+
+        getMarkers();
+
+
+    });
+
+
+
+    function setSelection(shape) {
+        clearSelection();
+        selectedShape = shape;
+        shape.setEditable(true);
+        // selectColor(shape.get('fillColor') || shape.get('strokeColor'));
+    }
+
+
+    function clearSelection() {
+        if (selectedShape) {
+            selectedShape.setEditable(false);
+            selectedShape = null;
+        }
+    }
+
+  
+
+    function bindInfoWindow(marker, map, infoWindow, html) {
+        google.maps.event.addListener(marker, 'click', function () {
+            infoWindow.setContent(html);
+            infoWindow.open(map, marker);
+
+        });
+    }
+
+    function bindInfoWindowOpen(marker, map, infoWindow, html) {
+        infoWindow.setContent(html);
+        infoWindow.open(map, marker);
+       
+    }
+
+    function formatDate(dateObj, format) {
+        var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        var curr_date = dateObj.getDate();
+        var curr_month = dateObj.getMonth();
+        curr_month = curr_month + 1;
+        var curr_year = dateObj.getFullYear();
+        var curr_min = dateObj.getMinutes();
+        var curr_hr = dateObj.getHours();
+        var curr_sc = dateObj.getSeconds();
+        if (curr_month.toString().length == 1)
+            curr_month = '0' + curr_month;
+        if (curr_date.toString().length == 1)
+            curr_date = '0' + curr_date;
+        if (curr_hr.toString().length == 1)
+            curr_hr = '0' + curr_hr;
+        if (curr_min.toString().length == 1)
+            curr_min = '0' + curr_min;
+
+        if (format == 1) //dd-mm-yyyy
+        {
+            return curr_date + "-" + curr_month + "-" + curr_year;
+        } else if (format == 2) //yyyy-mm-dd
+        {
+            return curr_year + "-" + curr_month + "-" + curr_date;
+        } else if (format == 3) //dd/mm/yyyy
+        {
+            return curr_date + "/" + curr_month + "/" + curr_year;
+        } else if (format == 4) // MM/dd/yyyy HH:mm:ss
+        {
+            return curr_month + "/" + curr_date + "/" + curr_year + " " + curr_hr + ":" + curr_min + ":" + curr_sc;
+        } else if (format == 5) // dd/MM/yyyy HH:mm:ss
+        {
+            return curr_date + "/" + curr_month + "/" + curr_year + " " + curr_hr + ":" + curr_min + ":" + curr_sc;
+        }
+    }
+
+
+    $(window).resize(function () {
+        $('#test').css("height", $(window).height());
+        $('#test').css("width", $(window).width());
+        var center = mapPopUp.getCenter();
+        google.maps.event.trigger(mapPopUp, "resize");
+        mapPopUp.setCenter(center);
+    });
+
+    function GetDireccion(dato) {
+        var data;
+        $.ajax({
+            type: "POST",
+            async: false,
+            contentType: "application/json; charset=utf-8",
+            url: "@Url.Action("GetDireccion", "Home")",
+            data: "{'dato':'" + dato + "'}",
+        dataType: "json",
+        success: function(rs) {
+            //alert(rs);
+            data = rs;
+            //callback.call(data);
+        },
+        error: function(result) {
+            alert("Error");
+        }
+    });
+
+    return data;
+    }
+
+</script>
+
+}

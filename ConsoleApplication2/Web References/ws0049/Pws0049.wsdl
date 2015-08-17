@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="LisaWs70" xmlns:wsdlns="LisaWs70" name="Pws0049" targetNamespace="LisaWs70" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" elementFormDefault="qualified" targetNamespace="LisaWs70">
+      <xsd:element name="Pws0049.Execute">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Xmlentrada" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Pws0049.ExecuteResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Xmlsalida" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </types>
+  <message name="Pws0049.ExecuteSoapIn">
+    <part name="parameters" element="wsdlns:Pws0049.Execute" />
+  </message>
+  <message name="Pws0049.ExecuteSoapOut">
+    <part name="parameters" element="wsdlns:Pws0049.ExecuteResponse" />
+  </message>
+  <portType name="Pws0049SoapPort">
+    <operation name="Execute">
+      <input message="wsdlns:Pws0049.ExecuteSoapIn" />
+      <output message="wsdlns:Pws0049.ExecuteSoapOut" />
+    </operation>
+  </portType>
+  <binding name="Pws0049SoapBinding" type="wsdlns:Pws0049SoapPort">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="Execute">
+      <soap:operation soapAction="LisaWs70action/APWS0049.Execute" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="Pws0049">
+    <port name="Pws0049SoapPort" binding="wsdlns:Pws0049SoapBinding">
+      <soap:address location="http://192.168.1.230:8090/testlisainterfazsqln/servlet/apws0049" />
+    </port>
+  </service>
+</definitions>

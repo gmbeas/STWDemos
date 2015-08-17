@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://192.168.30.250/wcfGps/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WcfGps" />
+  <xs:element name="WPL_GPS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="tipo" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="fecha" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="patente" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="folioOrigen" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="folioDestino" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="minutos" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="kms" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WPL_GPSResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="WPL_GPSResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_TraePosicionxPosicion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_TraePosicionxPosicionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="SP_TraePosicionxPosicionResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_Configuracion">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="SP_ConfiguracionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="SP_ConfiguracionResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_InsertaUpdateMonitorContrato">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="tipo" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="gpsDispositivoId" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="origen" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="destino" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="fecha" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="tiempo_detenido" type="xs:double" />
+        <xs:element minOccurs="1" maxOccurs="1" name="tiempo_puntos" type="xs:double" />
+        <xs:element minOccurs="1" maxOccurs="1" name="kms" type="xs:double" />
+        <xs:element minOccurs="1" maxOccurs="1" name="id_in" type="xs:int" />
+        <xs:element minOccurs="1" maxOccurs="1" name="id_out" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_InsertaUpdateMonitorContratoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="SP_InsertaUpdateMonitorContratoResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ConsultaMonitorDetenido">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="gpsDispositivoId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ConsultaMonitorDetenidoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="SP_ConsultaMonitorDetenidoResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ConsultaControlRuta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="idDispositivo" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="fecha" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ConsultaControlRutaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="SP_ConsultaControlRutaResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ListaDispositivosPosicion">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="SP_ListaDispositivosPosicionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="SP_ListaDispositivosPosicionResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ListaDispositivosPosicionId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ListaDispositivosPosicionIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="SP_ListaDispositivosPosicionIdResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ListaDispositivos">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="SP_ListaDispositivosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="SP_ListaDispositivosResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ListaDispositivosID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_ListaDispositivosIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="SP_ListaDispositivosIDResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_GetColores">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="SP_GetColoresResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="SP_GetColoresResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_GetColoresID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_GetColoresIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="SP_GetColoresIDResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WPL_POW_EntregaRetiro">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="tipo" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="folio" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="cliente" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="fechad" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="fechah" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="sku" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="nombrefoto" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="movId" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="cadena" type="xs:string" />
+        <xs:element minOccurs="1" maxOccurs="1" name="userId" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="patente" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="estWop" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WPL_POW_EntregaRetiroResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="WPL_POW_EntregaRetiroResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_TraePosiciones">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="id" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="fechain" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="fechaout" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_TraePosicionesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="SP_TraePosicionesResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_UpdateDispositivo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="modelo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="patente" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="imei" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="numero" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="activo" type="xs:int" />
+        <xs:element minOccurs="0" name="color" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_UpdateDispositivoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SP_UpdateDispositivoResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_InsertaDispositivo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nombre" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="modelo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="patente" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="imei" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="numero" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="activo" type="xs:int" />
+        <xs:element minOccurs="0" name="color" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_InsertaDispositivoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SP_InsertaDispositivoResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_MarcaAlarma">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_MarcaAlarmaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="SP_MarcaAlarmaResult">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_InsertaPosicion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="direccion" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="altitud" type="xs:double" />
+        <xs:element minOccurs="0" name="curso" type="xs:double" />
+        <xs:element minOccurs="0" name="latitud" type="xs:double" />
+        <xs:element minOccurs="0" name="longitud" type="xs:double" />
+        <xs:element minOccurs="0" name="otros" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="poder" type="xs:int" />
+        <xs:element minOccurs="0" name="velocidad" type="xs:double" />
+        <xs:element minOccurs="0" name="fechahora" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="valido" type="xs:int" />
+        <xs:element minOccurs="0" name="dispositivo_id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_InsertaPosicionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SP_InsertaPosicionResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_InsertaControlRuta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="gpsDispositivoId" type="xs:int" />
+        <xs:element minOccurs="0" name="radio" type="xs:double" />
+        <xs:element minOccurs="0" name="latitud" type="xs:double" />
+        <xs:element minOccurs="0" name="longitud" type="xs:double" />
+        <xs:element minOccurs="0" name="folio" type="xs:int" />
+        <xs:element minOccurs="0" name="direccion" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fecha" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SP_InsertaControlRutaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SP_InsertaControlRutaResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPlayers">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPlayersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/WcfGps" minOccurs="0" name="GetPlayersResult" nillable="true" type="q1:ArrayOfPerson" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

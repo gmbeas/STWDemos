@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://192.168.30.250/wcfGps/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://192.168.30.250/wcfGps/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://192.168.30.250/wcfGps/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WcfGps" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService1_WPL_GPS_InputMessage">
+    <wsdl:part name="parameters" element="tns:WPL_GPS" />
+  </wsdl:message>
+  <wsdl:message name="IService1_WPL_GPS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WPL_GPSResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SP_TraePosicionxPosicion_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_TraePosicionxPosicion" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SP_TraePosicionxPosicion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_TraePosicionxPosicionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SP_Configuracion_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_Configuracion" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SP_Configuracion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ConfiguracionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SP_InsertaUpdateMonitorContrato_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_InsertaUpdateMonitorContrato" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SP_InsertaUpdateMonitorContrato_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_InsertaUpdateMonitorContratoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SP_ConsultaMonitorDetenido_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ConsultaMonitorDetenido" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SP_ConsultaMonitorDetenido_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ConsultaMonitorDetenidoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SP_ConsultaControlRuta_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ConsultaControlRuta" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SP_ConsultaControlRuta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ConsultaControlRutaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SP_ListaDispositivosPosicion_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ListaDispositivosPosicion" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SP_ListaDispositivosPosicion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ListaDispositivosPosicionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SP_ListaDispositivosPosicionId_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ListaDispositivosPosicionId" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SP_ListaDispositivosPosicionId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ListaDispositivosPosicionIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SP_ListaDispositivos_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ListaDispositivos" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SP_ListaDispositivos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ListaDispositivosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SP_ListaDispositivosID_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ListaDispositivosID" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SP_ListaDispositivosID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_ListaDispositivosIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SP_GetColores_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_GetColores" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SP_GetColores_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_GetColoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SP_GetColoresID_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_GetColoresID" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SP_GetColoresID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_GetColoresIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_WPL_POW_EntregaRetiro_InputMessage">
+    <wsdl:part name="parameters" element="tns:WPL_POW_EntregaRetiro" />
+  </wsdl:message>
+  <wsdl:message name="IService1_WPL_POW_EntregaRetiro_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WPL_POW_EntregaRetiroResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SP_TraePosiciones_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_TraePosiciones" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SP_TraePosiciones_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_TraePosicionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SP_UpdateDispositivo_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_UpdateDispositivo" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SP_UpdateDispositivo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_UpdateDispositivoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SP_InsertaDispositivo_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_InsertaDispositivo" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SP_InsertaDispositivo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_InsertaDispositivoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SP_MarcaAlarma_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_MarcaAlarma" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SP_MarcaAlarma_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_MarcaAlarmaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SP_InsertaPosicion_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_InsertaPosicion" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SP_InsertaPosicion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_InsertaPosicionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SP_InsertaControlRuta_InputMessage">
+    <wsdl:part name="parameters" element="tns:SP_InsertaControlRuta" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SP_InsertaControlRuta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SP_InsertaControlRutaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetPlayers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlayers" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetPlayers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlayersResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService1">
+    <wsdl:operation name="WPL_GPS">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/WPL_GPS" message="tns:IService1_WPL_GPS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/WPL_GPSResponse" message="tns:IService1_WPL_GPS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_TraePosicionxPosicion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SP_TraePosicionxPosicion" message="tns:IService1_SP_TraePosicionxPosicion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SP_TraePosicionxPosicionResponse" message="tns:IService1_SP_TraePosicionxPosicion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_Configuracion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SP_Configuracion" message="tns:IService1_SP_Configuracion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SP_ConfiguracionResponse" message="tns:IService1_SP_Configuracion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_InsertaUpdateMonitorContrato">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SP_InsertaUpdateMonitorContrato" message="tns:IService1_SP_InsertaUpdateMonitorContrato_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SP_InsertaUpdateMonitorContratoResponse" message="tns:IService1_SP_InsertaUpdateMonitorContrato_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ConsultaMonitorDetenido">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SP_ConsultaMonitorDetenido" message="tns:IService1_SP_ConsultaMonitorDetenido_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SP_ConsultaMonitorDetenidoResponse" message="tns:IService1_SP_ConsultaMonitorDetenido_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ConsultaControlRuta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SP_ConsultaControlRuta" message="tns:IService1_SP_ConsultaControlRuta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SP_ConsultaControlRutaResponse" message="tns:IService1_SP_ConsultaControlRuta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ListaDispositivosPosicion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SP_ListaDispositivosPosicion" message="tns:IService1_SP_ListaDispositivosPosicion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SP_ListaDispositivosPosicionResponse" message="tns:IService1_SP_ListaDispositivosPosicion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ListaDispositivosPosicionId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SP_ListaDispositivosPosicionId" message="tns:IService1_SP_ListaDispositivosPosicionId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SP_ListaDispositivosPosicionIdResponse" message="tns:IService1_SP_ListaDispositivosPosicionId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ListaDispositivos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SP_ListaDispositivos" message="tns:IService1_SP_ListaDispositivos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SP_ListaDispositivosResponse" message="tns:IService1_SP_ListaDispositivos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_ListaDispositivosID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SP_ListaDispositivosID" message="tns:IService1_SP_ListaDispositivosID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SP_ListaDispositivosIDResponse" message="tns:IService1_SP_ListaDispositivosID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_GetColores">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SP_GetColores" message="tns:IService1_SP_GetColores_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SP_GetColoresResponse" message="tns:IService1_SP_GetColores_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_GetColoresID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SP_GetColoresID" message="tns:IService1_SP_GetColoresID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SP_GetColoresIDResponse" message="tns:IService1_SP_GetColoresID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WPL_POW_EntregaRetiro">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/WPL_POW_EntregaRetiro" message="tns:IService1_WPL_POW_EntregaRetiro_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/WPL_POW_EntregaRetiroResponse" message="tns:IService1_WPL_POW_EntregaRetiro_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_TraePosiciones">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SP_TraePosiciones" message="tns:IService1_SP_TraePosiciones_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SP_TraePosicionesResponse" message="tns:IService1_SP_TraePosiciones_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_UpdateDispositivo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SP_UpdateDispositivo" message="tns:IService1_SP_UpdateDispositivo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SP_UpdateDispositivoResponse" message="tns:IService1_SP_UpdateDispositivo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_InsertaDispositivo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SP_InsertaDispositivo" message="tns:IService1_SP_InsertaDispositivo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SP_InsertaDispositivoResponse" message="tns:IService1_SP_InsertaDispositivo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_MarcaAlarma">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SP_MarcaAlarma" message="tns:IService1_SP_MarcaAlarma_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SP_MarcaAlarmaResponse" message="tns:IService1_SP_MarcaAlarma_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_InsertaPosicion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SP_InsertaPosicion" message="tns:IService1_SP_InsertaPosicion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SP_InsertaPosicionResponse" message="tns:IService1_SP_InsertaPosicion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_InsertaControlRuta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SP_InsertaControlRuta" message="tns:IService1_SP_InsertaControlRuta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SP_InsertaControlRutaResponse" message="tns:IService1_SP_InsertaControlRuta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetPlayers" message="tns:IService1_GetPlayers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetPlayersResponse" message="tns:IService1_GetPlayers_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WPL_GPS">
+      <soap:operation soapAction="http://tempuri.org/IService1/WPL_GPS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_TraePosicionxPosicion">
+      <soap:operation soapAction="http://tempuri.org/IService1/SP_TraePosicionxPosicion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_Configuracion">
+      <soap:operation soapAction="http://tempuri.org/IService1/SP_Configuracion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_InsertaUpdateMonitorContrato">
+      <soap:operation soapAction="http://tempuri.org/IService1/SP_InsertaUpdateMonitorContrato" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ConsultaMonitorDetenido">
+      <soap:operation soapAction="http://tempuri.org/IService1/SP_ConsultaMonitorDetenido" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ConsultaControlRuta">
+      <soap:operation soapAction="http://tempuri.org/IService1/SP_ConsultaControlRuta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ListaDispositivosPosicion">
+      <soap:operation soapAction="http://tempuri.org/IService1/SP_ListaDispositivosPosicion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ListaDispositivosPosicionId">
+      <soap:operation soapAction="http://tempuri.org/IService1/SP_ListaDispositivosPosicionId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ListaDispositivos">
+      <soap:operation soapAction="http://tempuri.org/IService1/SP_ListaDispositivos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_ListaDispositivosID">
+      <soap:operation soapAction="http://tempuri.org/IService1/SP_ListaDispositivosID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_GetColores">
+      <soap:operation soapAction="http://tempuri.org/IService1/SP_GetColores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_GetColoresID">
+      <soap:operation soapAction="http://tempuri.org/IService1/SP_GetColoresID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WPL_POW_EntregaRetiro">
+      <soap:operation soapAction="http://tempuri.org/IService1/WPL_POW_EntregaRetiro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_TraePosiciones">
+      <soap:operation soapAction="http://tempuri.org/IService1/SP_TraePosiciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_UpdateDispositivo">
+      <soap:operation soapAction="http://tempuri.org/IService1/SP_UpdateDispositivo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_InsertaDispositivo">
+      <soap:operation soapAction="http://tempuri.org/IService1/SP_InsertaDispositivo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_MarcaAlarma">
+      <soap:operation soapAction="http://tempuri.org/IService1/SP_MarcaAlarma" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_InsertaPosicion">
+      <soap:operation soapAction="http://tempuri.org/IService1/SP_InsertaPosicion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_InsertaControlRuta">
+      <soap:operation soapAction="http://tempuri.org/IService1/SP_InsertaControlRuta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlayers">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetPlayers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
+      <soap:address location="http://192.168.30.250/wcfGps/Service1.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

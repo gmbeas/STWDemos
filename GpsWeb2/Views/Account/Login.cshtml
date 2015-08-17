@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "Login Page";
+    ViewBag.Description = "login page";
+    Layout = "~/Views/Shared/_Empty.cshtml";
+}
+@using System
+@using System.Threading.Tasks
+@model GpsWeb2.Models.LoginModel
+
+<div class="login-container animated fadeInDown">
+    <div class="loginbox bg-lightgray">
+        <div class="loginbox-title">Acceso Plataforma</div>
+
+
+        @using (var form = Html.Bootstrap().Begin(new Form()
+            .HtmlAttributes(new { @class = "custom-class", @name = "formulito", @id = "formulito" })
+            .FormMethod(FormMethod.Post)
+            .Type(FormType.Horizontal)))
+        {
+            <div class="loginbox-textbox">
+                @Html.Bootstrap().TextBoxFor(t => t.EmailAddress).Placeholder("Email")
+            </div>
+            <div class="loginbox-textbox">
+                @Html.Bootstrap().PasswordFor(t => t.Password).Placeholder("Contraseña")
+            </div>
+            <div class="loginbox-forgot">
+                <a href="">Olvidó su contraseña?</a>
+            </div>
+            <div class="loginbox-submit">
+                @Html.Bootstrap().SubmitButton().Text("Login").Color(BootstrapColors.Primary).ButtonBlock()
+            </div>
+            <div class="loginbox-signup">
+                @Html.ActionLink("Registrarse", "Register")
+            </div>
+        }
+    </div>
+    <div class="logobox">
+    </div>
+</div>
+
+@section PageScripts{
+    <script>
+    $("#formulito").submit(function(e) {
+        var url = "@Url.Action("Index","Home")";
+        $(location).attr('href', url);
+        return false;
+    });
+
+</script>
+}
+

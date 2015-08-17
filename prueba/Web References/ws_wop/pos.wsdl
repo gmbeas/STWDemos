@@ -1,0 +1,2952 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="WPL_POW_Estudiantes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Tipo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RUT" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CodEstudiante" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="UNIV_Id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CARR_Id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="AnoUniv" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="EstudianteActivo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WPL_POW_EstudiantesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WPL_POW_EstudiantesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WPL_ValidaUsuarioAutoriza">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="psw" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WPL_ValidaUsuarioAutorizaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WPL_ValidaUsuarioAutorizaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WTT_Web_Encuesta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Tipo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ENC_Id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ETA_Id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="NEC_Id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DUD_Id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CAB_Id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Caso" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClienteNombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClienteEMail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClienteFono" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClienteRubro" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EjecutivaNombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClienteTerminaCompra" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CoordinaNuevoContacto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CordinaFecha" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PorqueNoNuevoContacto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EnvioCodigoDescuento" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AutorizaEnvioOfertas" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FolioNVAsociada" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FaltaInformacionResponder" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WTT_Web_EncuestaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WTT_Web_EncuestaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WPL_ListaCabecera">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Tipo_" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="TIE_Id_" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CAB_Id_" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CLI_Id_" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ADM_Id_" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="USR_Id_" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CC_Id_" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Mes_" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Ano_" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WPL_ListaCabeceraResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WPL_ListaCabeceraResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WPL_ActualizaLavanderiaRptDoc">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Tipo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CLI_Id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoDoc" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CAB_Id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Folio" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Referencia" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WPL_ActualizaLavanderiaRptDocResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WPL_ActualizaLavanderiaRptDocResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WPL_ActualizaLavanderiaRpt">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Tipo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CLI_Id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Referencia" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WPL_ActualizaLavanderiaRptResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WPL_ActualizaLavanderiaRptResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WPL_ActualizaDetalle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Tipo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CAB_Id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CLI_Id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SKU" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Cantidad" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ReferenciaOld" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Referencia" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ActBodega" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PrecioGuia" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="NetoGuia" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="BrutoGuia" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="NombreSku" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WPL_ActualizaDetalleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WPL_ActualizaDetalleResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WPL_ActualizaCabecera">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Tipo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="EMP_Id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="TIE_Id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="TIP_Id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="PRC_Id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CJA_Id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="EST_Id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="EMI_Id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="REC_Id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CLI_Id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="FOLIO" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CAB_Id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="TCP_Id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DIR_Id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Observaciones" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="REF_Id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="kg" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaRequerida" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Horario" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DIRF_Id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CC_Id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ADM_Id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="USR_Id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WPL_ActualizaCabeceraResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WPL_ActualizaCabeceraResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WPL_ActualizaLavanderia">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Tipo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CAB_Id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SKU" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NombreSKU" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FAM_Id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CLA_Id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="GRP_Id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="PrecioBruto" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="PesoKg" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WPL_ActualizaLavanderiaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WPL_ActualizaLavanderiaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WPL_POW_Promociones">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tipo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codpromo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WPL_POW_PromocionesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WPL_POW_PromocionesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POW_AdminCompra_FichaEmpresa">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tipo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="empresa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codempresa" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="tie_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="emp_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="adm_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="usr_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="atr_cli_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="dir_desp" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="dir_fact" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POW_AdminCompra_FichaEmpresaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="POW_AdminCompra_FichaEmpresaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WPL_POW_AdminCompras">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tipo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="empresa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codempresa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rutempresa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rutadmin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rutuser" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="tie_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="emp_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="adm_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="usr_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="atr_cli_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="dir_desp" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="dir_fact" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="cc_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="contacto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fono" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="celular" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requiereapr" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="PuedeCambiarCC" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="PptoUnidades" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="PptoValorNeto" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="activo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WPL_POW_AdminComprasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WPL_POW_AdminComprasResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POW_AdminCompra_CentroCosto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tipo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="empresa" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="tie_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="emp_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="adm_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="usr_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="atr_cli_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="dir_desp" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="dir_fact" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POW_AdminCompra_CentroCostoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="POW_AdminCompra_CentroCostoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POW_AdminCompra_Comprador">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idPersona" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POW_AdminCompra_CompradorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="POW_AdminCompra_CompradorResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POW_AdminCompra_RutEmpresa">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idEmpresa" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POW_AdminCompra_RutEmpresaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="POW_AdminCompra_RutEmpresaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POW_AdminCompra_Admin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idPersona" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POW_AdminCompra_AdminResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="POW_AdminCompra_AdminResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POW_AdminCompra_Arbol">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tipo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Stock" type="s1:char" />
+            <s:element minOccurs="0" maxOccurs="1" name="Disponible" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Empresa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Prefijo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="NroSkus" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Tie_Id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Arbol" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ArbolNivel" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="MbArtNom" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MbFamCod" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MbClaCod" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MbMerCod" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MbGrpCod" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PRF_Id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Bodega" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BusquedaExacta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodPromo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POW_AdminCompra_ArbolResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="POW_AdminCompra_ArbolResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POS_Consulta_Cabecera">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tipo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="cab_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="est_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="bodegalisa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cajalisa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tipodoclisa" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="folio" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="codcliente" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="use_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="adm_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ano" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="mes" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodVendedor" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POS_Consulta_CabeceraResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="POS_Consulta_CabeceraResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POW_Evento_Consulta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POW_Evento_ConsultaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="POW_Evento_ConsultaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POW_Evento_Inserta_Nuevo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="empresa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cargo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rubro" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fono" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="idevento" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POW_Evento_Inserta_NuevoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="POW_Evento_Inserta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="escuela" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="carrera" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ano" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="idevento" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POW_Evento_InsertaResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="POS_ActualizaCabecera">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Tipo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Empresa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BodegaLisa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CajaLisa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoDocLisa" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="folio" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Fecha_Emi" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodVendedor" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodCliente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ListaPrecio" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="EST_Id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="USE_Id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Descuento1" type="s:float" />
+            <s:element minOccurs="1" maxOccurs="1" name="Descuento2" type="s:float" />
+            <s:element minOccurs="1" maxOccurs="1" name="Descuento3" type="s:float" />
+            <s:element minOccurs="1" maxOccurs="1" name="Donacion" type="s:float" />
+            <s:element minOccurs="1" maxOccurs="1" name="TDCREF_Id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="FolioRef" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Observaciones" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="UsuarioUlt" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Generada" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="preventa" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodPromo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dir_desp" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="dir_fact" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="cc_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ordencompra" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="adm_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="cli_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="enlace" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POS_ActualizaCabeceraResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="POS_ActualizaCabeceraResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidaUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidaUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidaUsuarioResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POS_ActualizaDetalle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Tipo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Empresa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BodegaLisa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CajaLisa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoDocLisa" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="folio" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sku" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UM" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Cantidad" type="s:float" />
+            <s:element minOccurs="1" maxOccurs="1" name="Descuento1" type="s:float" />
+            <s:element minOccurs="1" maxOccurs="1" name="Descuento2" type="s:float" />
+            <s:element minOccurs="1" maxOccurs="1" name="Descuento3" type="s:float" />
+            <s:element minOccurs="1" maxOccurs="1" name="precio" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodPromo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POS_ActualizaDetalleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="POS_ActualizaDetalleResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POS_ActualizaPagos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Tipo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Empresa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BodegaLisa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CajaLisa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoDocLisa" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="folio" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="nroDocPago" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoMedioPago" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="TTC_Id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="BCO_Id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="PZA_Id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="RutTitular" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CtaCte" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NroOperacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NroAutorizacion" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="TotalCuotas" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="NroCuota" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaCuota" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="valorCuota" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="EST_Id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="NombreTitular" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POS_ActualizaPagosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="POS_ActualizaPagosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POS_TipoTarjetasdeCreditoGet">
+        <s:complexType />
+      </s:element>
+      <s:element name="POS_TipoTarjetasdeCreditoGetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="POS_TipoTarjetasdeCreditoGetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POS_Correlativo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TipoDocumento" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POS_CorrelativoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="POS_CorrelativoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POS_Autentifica">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POS_AutentificaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="POS_AutentificaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POS_Autentifica2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POS_Autentifica2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="POS_Autentifica2Result">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidaRolUsuarioWop">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Rol_Id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidaRolUsuarioWopResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidaRolUsuarioWopResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POS_IngresaRespaldoArqueo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Fecha" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="sede" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POS_IngresaRespaldoArqueoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="POS_IngresaRespaldoArqueoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POS_Documento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tipoOperacion" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Fecha" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="documento" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="estado" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="razon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tipoDocumento" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="docXML" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="generada" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="sede" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="caja" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POS_DocumentoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="POS_DocumentoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POS_Parametros_Configuracion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="parametro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POS_Parametros_ConfiguracionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="POS_Parametros_ConfiguracionResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POS_Regiones">
+        <s:complexType />
+      </s:element>
+      <s:element name="POS_RegionesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="POS_RegionesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POS_Ciudades">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CodigoRegion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POS_CiudadesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="POS_CiudadesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POS_Comunas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CodigoRegion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodigoCiudad" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POS_ComunasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="POS_ComunasResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POS_Documentos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tipo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nro" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="tipoDoc" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Fecha" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POS_DocumentosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="POS_DocumentosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POS_Documentos_Wop">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tipo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Cab_ID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Est_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="BodegaLisa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CajaLisa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoDocLisa" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="folio" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POS_Documentos_WopResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="POS_Documentos_WopResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POS_Cajeros">
+        <s:complexType />
+      </s:element>
+      <s:element name="POS_CajerosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="POS_CajerosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POS_Concilia">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tipo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fecha1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Fecha2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sede" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Caja" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Cajero" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoDoc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MedioPago" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NroDoc" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POS_ConciliaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="POS_ConciliaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POS_Ayuda">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tipo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POS_AyudaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="POS_AyudaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POS_Actividades">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tipo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Codigo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Codigo2" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POS_ActividadesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="POS_ActividadesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POS_ValidaStock">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bodega" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PuntoFacturacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sku" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Cantidad" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoDoc" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FolioDoc" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POS_ValidaStockResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="POS_ValidaStockResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WEB_Usuarios">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tipo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Rut" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DV" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Clave" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PerfilId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RutDepen" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RutAdministrador" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ApePat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ApeMat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Fantasia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Telefono" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Celular" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Fax" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SitioWeb" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EsEmpresa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EsFactura" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WEB_UsuariosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WEB_UsuariosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WEB_Arbol">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tipo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TIE_Id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Arbol" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Nivel" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodCliente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sku" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WEB_ArbolResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WEB_ArbolResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WPL_Sku_Atributos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Tipo_" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Stock_" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Disponible_" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="empresa_" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="prefijo_" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nroskus_" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="TIE_Id_" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Arbol_" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ArbolNivel_" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="MbArtNom_" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MbFamCod_" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MbClaCod_" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MbMerCod_" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MbGrpCod_" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PRF_Id_" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Bodega_" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BusquedaExacta_" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SKUActivo_" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaDesde_" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaHasta_" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IdAtrCliente_" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodPromo_" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WPL_Sku_AtributosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WPL_Sku_AtributosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WEB_Atributos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tipo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Stock" type="s1:char" />
+            <s:element minOccurs="0" maxOccurs="1" name="Disponible" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Empresa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Prefijo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="NroSkus" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Tie_Id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Arbol" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ArbolNivel" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="MbArtNom" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MbFamCod" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MbClaCod" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MbMerCod" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MbGrpCod" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PRF_Id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Bodega" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BusquedaExacta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodPromo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="codigoEmpre" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WEB_AtributosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WEB_AtributosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POS_CAJAS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IdCaja" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Tipo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POS_CAJASResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="POS_CAJASResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POS_Parametros">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="parametro1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="parametro2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="parametro3" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="POS_ParametrosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="POS_ParametrosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WEB_Password">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tipo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Fecha" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="rut" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Codigo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WEB_PasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WEB_PasswordResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WEB_Consulta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tipo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WEB_ConsultaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WEB_ConsultaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WEB_Giros">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Tipo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodigoRubro" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodigoSubRubro" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodigoActividad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BuscaCodigo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BuscaNombre" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WEB_GirosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WEB_GirosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WEB_Imagenes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Tipo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LLave1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LLave2" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WEB_ImagenesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WEB_ImagenesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WPL_LeeParametrosAdminWeb">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Tipo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Llave1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Llave2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Llave3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Valor" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="TipoPromo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WPL_LeeParametrosAdminWebResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WPL_LeeParametrosAdminWebResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="char">
+        <s:restriction base="s:unsignedShort" />
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="WPL_POW_EstudiantesSoapIn">
+    <wsdl:part name="parameters" element="tns:WPL_POW_Estudiantes" />
+  </wsdl:message>
+  <wsdl:message name="WPL_POW_EstudiantesSoapOut">
+    <wsdl:part name="parameters" element="tns:WPL_POW_EstudiantesResponse" />
+  </wsdl:message>
+  <wsdl:message name="WPL_ValidaUsuarioAutorizaSoapIn">
+    <wsdl:part name="parameters" element="tns:WPL_ValidaUsuarioAutoriza" />
+  </wsdl:message>
+  <wsdl:message name="WPL_ValidaUsuarioAutorizaSoapOut">
+    <wsdl:part name="parameters" element="tns:WPL_ValidaUsuarioAutorizaResponse" />
+  </wsdl:message>
+  <wsdl:message name="WTT_Web_EncuestaSoapIn">
+    <wsdl:part name="parameters" element="tns:WTT_Web_Encuesta" />
+  </wsdl:message>
+  <wsdl:message name="WTT_Web_EncuestaSoapOut">
+    <wsdl:part name="parameters" element="tns:WTT_Web_EncuestaResponse" />
+  </wsdl:message>
+  <wsdl:message name="WPL_ListaCabeceraSoapIn">
+    <wsdl:part name="parameters" element="tns:WPL_ListaCabecera" />
+  </wsdl:message>
+  <wsdl:message name="WPL_ListaCabeceraSoapOut">
+    <wsdl:part name="parameters" element="tns:WPL_ListaCabeceraResponse" />
+  </wsdl:message>
+  <wsdl:message name="WPL_ActualizaLavanderiaRptDocSoapIn">
+    <wsdl:part name="parameters" element="tns:WPL_ActualizaLavanderiaRptDoc" />
+  </wsdl:message>
+  <wsdl:message name="WPL_ActualizaLavanderiaRptDocSoapOut">
+    <wsdl:part name="parameters" element="tns:WPL_ActualizaLavanderiaRptDocResponse" />
+  </wsdl:message>
+  <wsdl:message name="WPL_ActualizaLavanderiaRptSoapIn">
+    <wsdl:part name="parameters" element="tns:WPL_ActualizaLavanderiaRpt" />
+  </wsdl:message>
+  <wsdl:message name="WPL_ActualizaLavanderiaRptSoapOut">
+    <wsdl:part name="parameters" element="tns:WPL_ActualizaLavanderiaRptResponse" />
+  </wsdl:message>
+  <wsdl:message name="WPL_ActualizaDetalleSoapIn">
+    <wsdl:part name="parameters" element="tns:WPL_ActualizaDetalle" />
+  </wsdl:message>
+  <wsdl:message name="WPL_ActualizaDetalleSoapOut">
+    <wsdl:part name="parameters" element="tns:WPL_ActualizaDetalleResponse" />
+  </wsdl:message>
+  <wsdl:message name="WPL_ActualizaCabeceraSoapIn">
+    <wsdl:part name="parameters" element="tns:WPL_ActualizaCabecera" />
+  </wsdl:message>
+  <wsdl:message name="WPL_ActualizaCabeceraSoapOut">
+    <wsdl:part name="parameters" element="tns:WPL_ActualizaCabeceraResponse" />
+  </wsdl:message>
+  <wsdl:message name="WPL_ActualizaLavanderiaSoapIn">
+    <wsdl:part name="parameters" element="tns:WPL_ActualizaLavanderia" />
+  </wsdl:message>
+  <wsdl:message name="WPL_ActualizaLavanderiaSoapOut">
+    <wsdl:part name="parameters" element="tns:WPL_ActualizaLavanderiaResponse" />
+  </wsdl:message>
+  <wsdl:message name="WPL_POW_PromocionesSoapIn">
+    <wsdl:part name="parameters" element="tns:WPL_POW_Promociones" />
+  </wsdl:message>
+  <wsdl:message name="WPL_POW_PromocionesSoapOut">
+    <wsdl:part name="parameters" element="tns:WPL_POW_PromocionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="POW_AdminCompra_FichaEmpresaSoapIn">
+    <wsdl:part name="parameters" element="tns:POW_AdminCompra_FichaEmpresa" />
+  </wsdl:message>
+  <wsdl:message name="POW_AdminCompra_FichaEmpresaSoapOut">
+    <wsdl:part name="parameters" element="tns:POW_AdminCompra_FichaEmpresaResponse" />
+  </wsdl:message>
+  <wsdl:message name="WPL_POW_AdminComprasSoapIn">
+    <wsdl:part name="parameters" element="tns:WPL_POW_AdminCompras" />
+  </wsdl:message>
+  <wsdl:message name="WPL_POW_AdminComprasSoapOut">
+    <wsdl:part name="parameters" element="tns:WPL_POW_AdminComprasResponse" />
+  </wsdl:message>
+  <wsdl:message name="POW_AdminCompra_CentroCostoSoapIn">
+    <wsdl:part name="parameters" element="tns:POW_AdminCompra_CentroCosto" />
+  </wsdl:message>
+  <wsdl:message name="POW_AdminCompra_CentroCostoSoapOut">
+    <wsdl:part name="parameters" element="tns:POW_AdminCompra_CentroCostoResponse" />
+  </wsdl:message>
+  <wsdl:message name="POW_AdminCompra_CompradorSoapIn">
+    <wsdl:part name="parameters" element="tns:POW_AdminCompra_Comprador" />
+  </wsdl:message>
+  <wsdl:message name="POW_AdminCompra_CompradorSoapOut">
+    <wsdl:part name="parameters" element="tns:POW_AdminCompra_CompradorResponse" />
+  </wsdl:message>
+  <wsdl:message name="POW_AdminCompra_RutEmpresaSoapIn">
+    <wsdl:part name="parameters" element="tns:POW_AdminCompra_RutEmpresa" />
+  </wsdl:message>
+  <wsdl:message name="POW_AdminCompra_RutEmpresaSoapOut">
+    <wsdl:part name="parameters" element="tns:POW_AdminCompra_RutEmpresaResponse" />
+  </wsdl:message>
+  <wsdl:message name="POW_AdminCompra_AdminSoapIn">
+    <wsdl:part name="parameters" element="tns:POW_AdminCompra_Admin" />
+  </wsdl:message>
+  <wsdl:message name="POW_AdminCompra_AdminSoapOut">
+    <wsdl:part name="parameters" element="tns:POW_AdminCompra_AdminResponse" />
+  </wsdl:message>
+  <wsdl:message name="POW_AdminCompra_ArbolSoapIn">
+    <wsdl:part name="parameters" element="tns:POW_AdminCompra_Arbol" />
+  </wsdl:message>
+  <wsdl:message name="POW_AdminCompra_ArbolSoapOut">
+    <wsdl:part name="parameters" element="tns:POW_AdminCompra_ArbolResponse" />
+  </wsdl:message>
+  <wsdl:message name="POS_Consulta_CabeceraSoapIn">
+    <wsdl:part name="parameters" element="tns:POS_Consulta_Cabecera" />
+  </wsdl:message>
+  <wsdl:message name="POS_Consulta_CabeceraSoapOut">
+    <wsdl:part name="parameters" element="tns:POS_Consulta_CabeceraResponse" />
+  </wsdl:message>
+  <wsdl:message name="POW_Evento_ConsultaSoapIn">
+    <wsdl:part name="parameters" element="tns:POW_Evento_Consulta" />
+  </wsdl:message>
+  <wsdl:message name="POW_Evento_ConsultaSoapOut">
+    <wsdl:part name="parameters" element="tns:POW_Evento_ConsultaResponse" />
+  </wsdl:message>
+  <wsdl:message name="POW_Evento_Inserta_NuevoSoapIn">
+    <wsdl:part name="parameters" element="tns:POW_Evento_Inserta_Nuevo" />
+  </wsdl:message>
+  <wsdl:message name="POW_Evento_Inserta_NuevoSoapOut">
+    <wsdl:part name="parameters" element="tns:POW_Evento_Inserta_NuevoResponse" />
+  </wsdl:message>
+  <wsdl:message name="POW_Evento_InsertaSoapIn">
+    <wsdl:part name="parameters" element="tns:POW_Evento_Inserta" />
+  </wsdl:message>
+  <wsdl:message name="POW_Evento_InsertaSoapOut">
+    <wsdl:part name="parameters" element="tns:POW_Evento_InsertaResponse" />
+  </wsdl:message>
+  <wsdl:message name="POS_ActualizaCabeceraSoapIn">
+    <wsdl:part name="parameters" element="tns:POS_ActualizaCabecera" />
+  </wsdl:message>
+  <wsdl:message name="POS_ActualizaCabeceraSoapOut">
+    <wsdl:part name="parameters" element="tns:POS_ActualizaCabeceraResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidaUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidaUsuario" />
+  </wsdl:message>
+  <wsdl:message name="ValidaUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidaUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="POS_ActualizaDetalleSoapIn">
+    <wsdl:part name="parameters" element="tns:POS_ActualizaDetalle" />
+  </wsdl:message>
+  <wsdl:message name="POS_ActualizaDetalleSoapOut">
+    <wsdl:part name="parameters" element="tns:POS_ActualizaDetalleResponse" />
+  </wsdl:message>
+  <wsdl:message name="POS_ActualizaPagosSoapIn">
+    <wsdl:part name="parameters" element="tns:POS_ActualizaPagos" />
+  </wsdl:message>
+  <wsdl:message name="POS_ActualizaPagosSoapOut">
+    <wsdl:part name="parameters" element="tns:POS_ActualizaPagosResponse" />
+  </wsdl:message>
+  <wsdl:message name="POS_TipoTarjetasdeCreditoGetSoapIn">
+    <wsdl:part name="parameters" element="tns:POS_TipoTarjetasdeCreditoGet" />
+  </wsdl:message>
+  <wsdl:message name="POS_TipoTarjetasdeCreditoGetSoapOut">
+    <wsdl:part name="parameters" element="tns:POS_TipoTarjetasdeCreditoGetResponse" />
+  </wsdl:message>
+  <wsdl:message name="POS_CorrelativoSoapIn">
+    <wsdl:part name="parameters" element="tns:POS_Correlativo" />
+  </wsdl:message>
+  <wsdl:message name="POS_CorrelativoSoapOut">
+    <wsdl:part name="parameters" element="tns:POS_CorrelativoResponse" />
+  </wsdl:message>
+  <wsdl:message name="POS_AutentificaSoapIn">
+    <wsdl:part name="parameters" element="tns:POS_Autentifica" />
+  </wsdl:message>
+  <wsdl:message name="POS_AutentificaSoapOut">
+    <wsdl:part name="parameters" element="tns:POS_AutentificaResponse" />
+  </wsdl:message>
+  <wsdl:message name="POS_Autentifica2SoapIn">
+    <wsdl:part name="parameters" element="tns:POS_Autentifica2" />
+  </wsdl:message>
+  <wsdl:message name="POS_Autentifica2SoapOut">
+    <wsdl:part name="parameters" element="tns:POS_Autentifica2Response" />
+  </wsdl:message>
+  <wsdl:message name="ValidaRolUsuarioWopSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidaRolUsuarioWop" />
+  </wsdl:message>
+  <wsdl:message name="ValidaRolUsuarioWopSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidaRolUsuarioWopResponse" />
+  </wsdl:message>
+  <wsdl:message name="POS_IngresaRespaldoArqueoSoapIn">
+    <wsdl:part name="parameters" element="tns:POS_IngresaRespaldoArqueo" />
+  </wsdl:message>
+  <wsdl:message name="POS_IngresaRespaldoArqueoSoapOut">
+    <wsdl:part name="parameters" element="tns:POS_IngresaRespaldoArqueoResponse" />
+  </wsdl:message>
+  <wsdl:message name="POS_DocumentoSoapIn">
+    <wsdl:part name="parameters" element="tns:POS_Documento" />
+  </wsdl:message>
+  <wsdl:message name="POS_DocumentoSoapOut">
+    <wsdl:part name="parameters" element="tns:POS_DocumentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="POS_Parametros_ConfiguracionSoapIn">
+    <wsdl:part name="parameters" element="tns:POS_Parametros_Configuracion" />
+  </wsdl:message>
+  <wsdl:message name="POS_Parametros_ConfiguracionSoapOut">
+    <wsdl:part name="parameters" element="tns:POS_Parametros_ConfiguracionResponse" />
+  </wsdl:message>
+  <wsdl:message name="POS_RegionesSoapIn">
+    <wsdl:part name="parameters" element="tns:POS_Regiones" />
+  </wsdl:message>
+  <wsdl:message name="POS_RegionesSoapOut">
+    <wsdl:part name="parameters" element="tns:POS_RegionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="POS_CiudadesSoapIn">
+    <wsdl:part name="parameters" element="tns:POS_Ciudades" />
+  </wsdl:message>
+  <wsdl:message name="POS_CiudadesSoapOut">
+    <wsdl:part name="parameters" element="tns:POS_CiudadesResponse" />
+  </wsdl:message>
+  <wsdl:message name="POS_ComunasSoapIn">
+    <wsdl:part name="parameters" element="tns:POS_Comunas" />
+  </wsdl:message>
+  <wsdl:message name="POS_ComunasSoapOut">
+    <wsdl:part name="parameters" element="tns:POS_ComunasResponse" />
+  </wsdl:message>
+  <wsdl:message name="POS_DocumentosSoapIn">
+    <wsdl:part name="parameters" element="tns:POS_Documentos" />
+  </wsdl:message>
+  <wsdl:message name="POS_DocumentosSoapOut">
+    <wsdl:part name="parameters" element="tns:POS_DocumentosResponse" />
+  </wsdl:message>
+  <wsdl:message name="POS_Documentos_WopSoapIn">
+    <wsdl:part name="parameters" element="tns:POS_Documentos_Wop" />
+  </wsdl:message>
+  <wsdl:message name="POS_Documentos_WopSoapOut">
+    <wsdl:part name="parameters" element="tns:POS_Documentos_WopResponse" />
+  </wsdl:message>
+  <wsdl:message name="POS_CajerosSoapIn">
+    <wsdl:part name="parameters" element="tns:POS_Cajeros" />
+  </wsdl:message>
+  <wsdl:message name="POS_CajerosSoapOut">
+    <wsdl:part name="parameters" element="tns:POS_CajerosResponse" />
+  </wsdl:message>
+  <wsdl:message name="POS_ConciliaSoapIn">
+    <wsdl:part name="parameters" element="tns:POS_Concilia" />
+  </wsdl:message>
+  <wsdl:message name="POS_ConciliaSoapOut">
+    <wsdl:part name="parameters" element="tns:POS_ConciliaResponse" />
+  </wsdl:message>
+  <wsdl:message name="POS_AyudaSoapIn">
+    <wsdl:part name="parameters" element="tns:POS_Ayuda" />
+  </wsdl:message>
+  <wsdl:message name="POS_AyudaSoapOut">
+    <wsdl:part name="parameters" element="tns:POS_AyudaResponse" />
+  </wsdl:message>
+  <wsdl:message name="POS_ActividadesSoapIn">
+    <wsdl:part name="parameters" element="tns:POS_Actividades" />
+  </wsdl:message>
+  <wsdl:message name="POS_ActividadesSoapOut">
+    <wsdl:part name="parameters" element="tns:POS_ActividadesResponse" />
+  </wsdl:message>
+  <wsdl:message name="POS_ValidaStockSoapIn">
+    <wsdl:part name="parameters" element="tns:POS_ValidaStock" />
+  </wsdl:message>
+  <wsdl:message name="POS_ValidaStockSoapOut">
+    <wsdl:part name="parameters" element="tns:POS_ValidaStockResponse" />
+  </wsdl:message>
+  <wsdl:message name="WEB_UsuariosSoapIn">
+    <wsdl:part name="parameters" element="tns:WEB_Usuarios" />
+  </wsdl:message>
+  <wsdl:message name="WEB_UsuariosSoapOut">
+    <wsdl:part name="parameters" element="tns:WEB_UsuariosResponse" />
+  </wsdl:message>
+  <wsdl:message name="WEB_ArbolSoapIn">
+    <wsdl:part name="parameters" element="tns:WEB_Arbol" />
+  </wsdl:message>
+  <wsdl:message name="WEB_ArbolSoapOut">
+    <wsdl:part name="parameters" element="tns:WEB_ArbolResponse" />
+  </wsdl:message>
+  <wsdl:message name="WPL_Sku_AtributosSoapIn">
+    <wsdl:part name="parameters" element="tns:WPL_Sku_Atributos" />
+  </wsdl:message>
+  <wsdl:message name="WPL_Sku_AtributosSoapOut">
+    <wsdl:part name="parameters" element="tns:WPL_Sku_AtributosResponse" />
+  </wsdl:message>
+  <wsdl:message name="WEB_AtributosSoapIn">
+    <wsdl:part name="parameters" element="tns:WEB_Atributos" />
+  </wsdl:message>
+  <wsdl:message name="WEB_AtributosSoapOut">
+    <wsdl:part name="parameters" element="tns:WEB_AtributosResponse" />
+  </wsdl:message>
+  <wsdl:message name="POS_CAJASSoapIn">
+    <wsdl:part name="parameters" element="tns:POS_CAJAS" />
+  </wsdl:message>
+  <wsdl:message name="POS_CAJASSoapOut">
+    <wsdl:part name="parameters" element="tns:POS_CAJASResponse" />
+  </wsdl:message>
+  <wsdl:message name="POS_ParametrosSoapIn">
+    <wsdl:part name="parameters" element="tns:POS_Parametros" />
+  </wsdl:message>
+  <wsdl:message name="POS_ParametrosSoapOut">
+    <wsdl:part name="parameters" element="tns:POS_ParametrosResponse" />
+  </wsdl:message>
+  <wsdl:message name="WEB_PasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:WEB_Password" />
+  </wsdl:message>
+  <wsdl:message name="WEB_PasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:WEB_PasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="WEB_ConsultaSoapIn">
+    <wsdl:part name="parameters" element="tns:WEB_Consulta" />
+  </wsdl:message>
+  <wsdl:message name="WEB_ConsultaSoapOut">
+    <wsdl:part name="parameters" element="tns:WEB_ConsultaResponse" />
+  </wsdl:message>
+  <wsdl:message name="WEB_GirosSoapIn">
+    <wsdl:part name="parameters" element="tns:WEB_Giros" />
+  </wsdl:message>
+  <wsdl:message name="WEB_GirosSoapOut">
+    <wsdl:part name="parameters" element="tns:WEB_GirosResponse" />
+  </wsdl:message>
+  <wsdl:message name="WEB_ImagenesSoapIn">
+    <wsdl:part name="parameters" element="tns:WEB_Imagenes" />
+  </wsdl:message>
+  <wsdl:message name="WEB_ImagenesSoapOut">
+    <wsdl:part name="parameters" element="tns:WEB_ImagenesResponse" />
+  </wsdl:message>
+  <wsdl:message name="WPL_LeeParametrosAdminWebSoapIn">
+    <wsdl:part name="parameters" element="tns:WPL_LeeParametrosAdminWeb" />
+  </wsdl:message>
+  <wsdl:message name="WPL_LeeParametrosAdminWebSoapOut">
+    <wsdl:part name="parameters" element="tns:WPL_LeeParametrosAdminWebResponse" />
+  </wsdl:message>
+  <wsdl:portType name="PosSoap">
+    <wsdl:operation name="WPL_POW_Estudiantes">
+      <wsdl:input message="tns:WPL_POW_EstudiantesSoapIn" />
+      <wsdl:output message="tns:WPL_POW_EstudiantesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WPL_ValidaUsuarioAutoriza">
+      <wsdl:input message="tns:WPL_ValidaUsuarioAutorizaSoapIn" />
+      <wsdl:output message="tns:WPL_ValidaUsuarioAutorizaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WTT_Web_Encuesta">
+      <wsdl:input message="tns:WTT_Web_EncuestaSoapIn" />
+      <wsdl:output message="tns:WTT_Web_EncuestaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WPL_ListaCabecera">
+      <wsdl:input message="tns:WPL_ListaCabeceraSoapIn" />
+      <wsdl:output message="tns:WPL_ListaCabeceraSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WPL_ActualizaLavanderiaRptDoc">
+      <wsdl:input message="tns:WPL_ActualizaLavanderiaRptDocSoapIn" />
+      <wsdl:output message="tns:WPL_ActualizaLavanderiaRptDocSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WPL_ActualizaLavanderiaRpt">
+      <wsdl:input message="tns:WPL_ActualizaLavanderiaRptSoapIn" />
+      <wsdl:output message="tns:WPL_ActualizaLavanderiaRptSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WPL_ActualizaDetalle">
+      <wsdl:input message="tns:WPL_ActualizaDetalleSoapIn" />
+      <wsdl:output message="tns:WPL_ActualizaDetalleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WPL_ActualizaCabecera">
+      <wsdl:input message="tns:WPL_ActualizaCabeceraSoapIn" />
+      <wsdl:output message="tns:WPL_ActualizaCabeceraSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WPL_ActualizaLavanderia">
+      <wsdl:input message="tns:WPL_ActualizaLavanderiaSoapIn" />
+      <wsdl:output message="tns:WPL_ActualizaLavanderiaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WPL_POW_Promociones">
+      <wsdl:input message="tns:WPL_POW_PromocionesSoapIn" />
+      <wsdl:output message="tns:WPL_POW_PromocionesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="POW_AdminCompra_FichaEmpresa">
+      <wsdl:input message="tns:POW_AdminCompra_FichaEmpresaSoapIn" />
+      <wsdl:output message="tns:POW_AdminCompra_FichaEmpresaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WPL_POW_AdminCompras">
+      <wsdl:input message="tns:WPL_POW_AdminComprasSoapIn" />
+      <wsdl:output message="tns:WPL_POW_AdminComprasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="POW_AdminCompra_CentroCosto">
+      <wsdl:input message="tns:POW_AdminCompra_CentroCostoSoapIn" />
+      <wsdl:output message="tns:POW_AdminCompra_CentroCostoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="POW_AdminCompra_Comprador">
+      <wsdl:input message="tns:POW_AdminCompra_CompradorSoapIn" />
+      <wsdl:output message="tns:POW_AdminCompra_CompradorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="POW_AdminCompra_RutEmpresa">
+      <wsdl:input message="tns:POW_AdminCompra_RutEmpresaSoapIn" />
+      <wsdl:output message="tns:POW_AdminCompra_RutEmpresaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="POW_AdminCompra_Admin">
+      <wsdl:input message="tns:POW_AdminCompra_AdminSoapIn" />
+      <wsdl:output message="tns:POW_AdminCompra_AdminSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="POW_AdminCompra_Arbol">
+      <wsdl:input message="tns:POW_AdminCompra_ArbolSoapIn" />
+      <wsdl:output message="tns:POW_AdminCompra_ArbolSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="POS_Consulta_Cabecera">
+      <wsdl:input message="tns:POS_Consulta_CabeceraSoapIn" />
+      <wsdl:output message="tns:POS_Consulta_CabeceraSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="POW_Evento_Consulta">
+      <wsdl:input message="tns:POW_Evento_ConsultaSoapIn" />
+      <wsdl:output message="tns:POW_Evento_ConsultaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="POW_Evento_Inserta_Nuevo">
+      <wsdl:input message="tns:POW_Evento_Inserta_NuevoSoapIn" />
+      <wsdl:output message="tns:POW_Evento_Inserta_NuevoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="POW_Evento_Inserta">
+      <wsdl:input message="tns:POW_Evento_InsertaSoapIn" />
+      <wsdl:output message="tns:POW_Evento_InsertaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="POS_ActualizaCabecera">
+      <wsdl:input message="tns:POS_ActualizaCabeceraSoapIn" />
+      <wsdl:output message="tns:POS_ActualizaCabeceraSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidaUsuario">
+      <wsdl:input message="tns:ValidaUsuarioSoapIn" />
+      <wsdl:output message="tns:ValidaUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="POS_ActualizaDetalle">
+      <wsdl:input message="tns:POS_ActualizaDetalleSoapIn" />
+      <wsdl:output message="tns:POS_ActualizaDetalleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="POS_ActualizaPagos">
+      <wsdl:input message="tns:POS_ActualizaPagosSoapIn" />
+      <wsdl:output message="tns:POS_ActualizaPagosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="POS_TipoTarjetasdeCreditoGet">
+      <wsdl:input message="tns:POS_TipoTarjetasdeCreditoGetSoapIn" />
+      <wsdl:output message="tns:POS_TipoTarjetasdeCreditoGetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="POS_Correlativo">
+      <wsdl:input message="tns:POS_CorrelativoSoapIn" />
+      <wsdl:output message="tns:POS_CorrelativoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="POS_Autentifica">
+      <wsdl:input message="tns:POS_AutentificaSoapIn" />
+      <wsdl:output message="tns:POS_AutentificaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="POS_Autentifica2">
+      <wsdl:input message="tns:POS_Autentifica2SoapIn" />
+      <wsdl:output message="tns:POS_Autentifica2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidaRolUsuarioWop">
+      <wsdl:input message="tns:ValidaRolUsuarioWopSoapIn" />
+      <wsdl:output message="tns:ValidaRolUsuarioWopSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="POS_IngresaRespaldoArqueo">
+      <wsdl:input message="tns:POS_IngresaRespaldoArqueoSoapIn" />
+      <wsdl:output message="tns:POS_IngresaRespaldoArqueoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="POS_Documento">
+      <wsdl:input message="tns:POS_DocumentoSoapIn" />
+      <wsdl:output message="tns:POS_DocumentoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="POS_Parametros_Configuracion">
+      <wsdl:input message="tns:POS_Parametros_ConfiguracionSoapIn" />
+      <wsdl:output message="tns:POS_Parametros_ConfiguracionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="POS_Regiones">
+      <wsdl:input message="tns:POS_RegionesSoapIn" />
+      <wsdl:output message="tns:POS_RegionesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="POS_Ciudades">
+      <wsdl:input message="tns:POS_CiudadesSoapIn" />
+      <wsdl:output message="tns:POS_CiudadesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="POS_Comunas">
+      <wsdl:input message="tns:POS_ComunasSoapIn" />
+      <wsdl:output message="tns:POS_ComunasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="POS_Documentos">
+      <wsdl:input message="tns:POS_DocumentosSoapIn" />
+      <wsdl:output message="tns:POS_DocumentosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="POS_Documentos_Wop">
+      <wsdl:input message="tns:POS_Documentos_WopSoapIn" />
+      <wsdl:output message="tns:POS_Documentos_WopSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="POS_Cajeros">
+      <wsdl:input message="tns:POS_CajerosSoapIn" />
+      <wsdl:output message="tns:POS_CajerosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="POS_Concilia">
+      <wsdl:input message="tns:POS_ConciliaSoapIn" />
+      <wsdl:output message="tns:POS_ConciliaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="POS_Ayuda">
+      <wsdl:input message="tns:POS_AyudaSoapIn" />
+      <wsdl:output message="tns:POS_AyudaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="POS_Actividades">
+      <wsdl:input message="tns:POS_ActividadesSoapIn" />
+      <wsdl:output message="tns:POS_ActividadesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="POS_ValidaStock">
+      <wsdl:input message="tns:POS_ValidaStockSoapIn" />
+      <wsdl:output message="tns:POS_ValidaStockSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WEB_Usuarios">
+      <wsdl:input message="tns:WEB_UsuariosSoapIn" />
+      <wsdl:output message="tns:WEB_UsuariosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WEB_Arbol">
+      <wsdl:input message="tns:WEB_ArbolSoapIn" />
+      <wsdl:output message="tns:WEB_ArbolSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WPL_Sku_Atributos">
+      <wsdl:input message="tns:WPL_Sku_AtributosSoapIn" />
+      <wsdl:output message="tns:WPL_Sku_AtributosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WEB_Atributos">
+      <wsdl:input message="tns:WEB_AtributosSoapIn" />
+      <wsdl:output message="tns:WEB_AtributosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="POS_CAJAS">
+      <wsdl:input message="tns:POS_CAJASSoapIn" />
+      <wsdl:output message="tns:POS_CAJASSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="POS_Parametros">
+      <wsdl:input message="tns:POS_ParametrosSoapIn" />
+      <wsdl:output message="tns:POS_ParametrosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WEB_Password">
+      <wsdl:input message="tns:WEB_PasswordSoapIn" />
+      <wsdl:output message="tns:WEB_PasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WEB_Consulta">
+      <wsdl:input message="tns:WEB_ConsultaSoapIn" />
+      <wsdl:output message="tns:WEB_ConsultaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WEB_Giros">
+      <wsdl:input message="tns:WEB_GirosSoapIn" />
+      <wsdl:output message="tns:WEB_GirosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WEB_Imagenes">
+      <wsdl:input message="tns:WEB_ImagenesSoapIn" />
+      <wsdl:output message="tns:WEB_ImagenesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WPL_LeeParametrosAdminWeb">
+      <wsdl:input message="tns:WPL_LeeParametrosAdminWebSoapIn" />
+      <wsdl:output message="tns:WPL_LeeParametrosAdminWebSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PosSoap" type="tns:PosSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WPL_POW_Estudiantes">
+      <soap:operation soapAction="http://tempuri.org/WPL_POW_Estudiantes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WPL_ValidaUsuarioAutoriza">
+      <soap:operation soapAction="http://tempuri.org/WPL_ValidaUsuarioAutoriza" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WTT_Web_Encuesta">
+      <soap:operation soapAction="http://tempuri.org/WTT_Web_Encuesta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WPL_ListaCabecera">
+      <soap:operation soapAction="http://tempuri.org/WPL_ListaCabecera" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WPL_ActualizaLavanderiaRptDoc">
+      <soap:operation soapAction="http://tempuri.org/WPL_ActualizaLavanderiaRptDoc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WPL_ActualizaLavanderiaRpt">
+      <soap:operation soapAction="http://tempuri.org/WPL_ActualizaLavanderiaRpt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WPL_ActualizaDetalle">
+      <soap:operation soapAction="http://tempuri.org/WPL_ActualizaDetalle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WPL_ActualizaCabecera">
+      <soap:operation soapAction="http://tempuri.org/WPL_ActualizaCabecera" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WPL_ActualizaLavanderia">
+      <soap:operation soapAction="http://tempuri.org/WPL_ActualizaLavanderia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WPL_POW_Promociones">
+      <soap:operation soapAction="http://tempuri.org/WPL_POW_Promociones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POW_AdminCompra_FichaEmpresa">
+      <soap:operation soapAction="http://tempuri.org/POW_AdminCompra_FichaEmpresa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WPL_POW_AdminCompras">
+      <soap:operation soapAction="http://tempuri.org/WPL_POW_AdminCompras" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POW_AdminCompra_CentroCosto">
+      <soap:operation soapAction="http://tempuri.org/POW_AdminCompra_CentroCosto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POW_AdminCompra_Comprador">
+      <soap:operation soapAction="http://tempuri.org/POW_AdminCompra_Comprador" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POW_AdminCompra_RutEmpresa">
+      <soap:operation soapAction="http://tempuri.org/POW_AdminCompra_RutEmpresa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POW_AdminCompra_Admin">
+      <soap:operation soapAction="http://tempuri.org/POW_AdminCompra_Admin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POW_AdminCompra_Arbol">
+      <soap:operation soapAction="http://tempuri.org/POW_AdminCompra_Arbol" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POS_Consulta_Cabecera">
+      <soap:operation soapAction="http://tempuri.org/POS_Consulta_Cabecera" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POW_Evento_Consulta">
+      <soap:operation soapAction="http://tempuri.org/POW_Evento_Consulta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POW_Evento_Inserta_Nuevo">
+      <soap:operation soapAction="http://tempuri.org/POW_Evento_Inserta_Nuevo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POW_Evento_Inserta">
+      <soap:operation soapAction="http://tempuri.org/POW_Evento_Inserta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POS_ActualizaCabecera">
+      <soap:operation soapAction="http://tempuri.org/POS_ActualizaCabecera" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidaUsuario">
+      <soap:operation soapAction="http://tempuri.org/ValidaUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POS_ActualizaDetalle">
+      <soap:operation soapAction="http://tempuri.org/POS_ActualizaDetalle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POS_ActualizaPagos">
+      <soap:operation soapAction="http://tempuri.org/POS_ActualizaPagos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POS_TipoTarjetasdeCreditoGet">
+      <soap:operation soapAction="http://tempuri.org/POS_TipoTarjetasdeCreditoGet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POS_Correlativo">
+      <soap:operation soapAction="http://tempuri.org/POS_Correlativo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POS_Autentifica">
+      <soap:operation soapAction="http://tempuri.org/POS_Autentifica" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POS_Autentifica2">
+      <soap:operation soapAction="http://tempuri.org/POS_Autentifica2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidaRolUsuarioWop">
+      <soap:operation soapAction="http://tempuri.org/ValidaRolUsuarioWop" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POS_IngresaRespaldoArqueo">
+      <soap:operation soapAction="http://tempuri.org/POS_IngresaRespaldoArqueo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POS_Documento">
+      <soap:operation soapAction="http://tempuri.org/POS_Documento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POS_Parametros_Configuracion">
+      <soap:operation soapAction="http://tempuri.org/POS_Parametros_Configuracion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POS_Regiones">
+      <soap:operation soapAction="http://tempuri.org/POS_Regiones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POS_Ciudades">
+      <soap:operation soapAction="http://tempuri.org/POS_Ciudades" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POS_Comunas">
+      <soap:operation soapAction="http://tempuri.org/POS_Comunas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POS_Documentos">
+      <soap:operation soapAction="http://tempuri.org/POS_Documentos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POS_Documentos_Wop">
+      <soap:operation soapAction="http://tempuri.org/POS_Documentos_Wop" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POS_Cajeros">
+      <soap:operation soapAction="http://tempuri.org/POS_Cajeros" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POS_Concilia">
+      <soap:operation soapAction="http://tempuri.org/POS_Concilia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POS_Ayuda">
+      <soap:operation soapAction="http://tempuri.org/POS_Ayuda" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POS_Actividades">
+      <soap:operation soapAction="http://tempuri.org/POS_Actividades" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POS_ValidaStock">
+      <soap:operation soapAction="http://tempuri.org/POS_ValidaStock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WEB_Usuarios">
+      <soap:operation soapAction="http://tempuri.org/WEB_Usuarios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WEB_Arbol">
+      <soap:operation soapAction="http://tempuri.org/WEB_Arbol" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WPL_Sku_Atributos">
+      <soap:operation soapAction="http://tempuri.org/WPL_Sku_Atributos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WEB_Atributos">
+      <soap:operation soapAction="http://tempuri.org/WEB_Atributos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POS_CAJAS">
+      <soap:operation soapAction="http://tempuri.org/POS_CAJAS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POS_Parametros">
+      <soap:operation soapAction="http://tempuri.org/POS_Parametros" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WEB_Password">
+      <soap:operation soapAction="http://tempuri.org/WEB_Password" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WEB_Consulta">
+      <soap:operation soapAction="http://tempuri.org/WEB_Consulta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WEB_Giros">
+      <soap:operation soapAction="http://tempuri.org/WEB_Giros" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WEB_Imagenes">
+      <soap:operation soapAction="http://tempuri.org/WEB_Imagenes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WPL_LeeParametrosAdminWeb">
+      <soap:operation soapAction="http://tempuri.org/WPL_LeeParametrosAdminWeb" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PosSoap12" type="tns:PosSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WPL_POW_Estudiantes">
+      <soap12:operation soapAction="http://tempuri.org/WPL_POW_Estudiantes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WPL_ValidaUsuarioAutoriza">
+      <soap12:operation soapAction="http://tempuri.org/WPL_ValidaUsuarioAutoriza" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WTT_Web_Encuesta">
+      <soap12:operation soapAction="http://tempuri.org/WTT_Web_Encuesta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WPL_ListaCabecera">
+      <soap12:operation soapAction="http://tempuri.org/WPL_ListaCabecera" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WPL_ActualizaLavanderiaRptDoc">
+      <soap12:operation soapAction="http://tempuri.org/WPL_ActualizaLavanderiaRptDoc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WPL_ActualizaLavanderiaRpt">
+      <soap12:operation soapAction="http://tempuri.org/WPL_ActualizaLavanderiaRpt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WPL_ActualizaDetalle">
+      <soap12:operation soapAction="http://tempuri.org/WPL_ActualizaDetalle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WPL_ActualizaCabecera">
+      <soap12:operation soapAction="http://tempuri.org/WPL_ActualizaCabecera" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WPL_ActualizaLavanderia">
+      <soap12:operation soapAction="http://tempuri.org/WPL_ActualizaLavanderia" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WPL_POW_Promociones">
+      <soap12:operation soapAction="http://tempuri.org/WPL_POW_Promociones" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POW_AdminCompra_FichaEmpresa">
+      <soap12:operation soapAction="http://tempuri.org/POW_AdminCompra_FichaEmpresa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WPL_POW_AdminCompras">
+      <soap12:operation soapAction="http://tempuri.org/WPL_POW_AdminCompras" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POW_AdminCompra_CentroCosto">
+      <soap12:operation soapAction="http://tempuri.org/POW_AdminCompra_CentroCosto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POW_AdminCompra_Comprador">
+      <soap12:operation soapAction="http://tempuri.org/POW_AdminCompra_Comprador" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POW_AdminCompra_RutEmpresa">
+      <soap12:operation soapAction="http://tempuri.org/POW_AdminCompra_RutEmpresa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POW_AdminCompra_Admin">
+      <soap12:operation soapAction="http://tempuri.org/POW_AdminCompra_Admin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POW_AdminCompra_Arbol">
+      <soap12:operation soapAction="http://tempuri.org/POW_AdminCompra_Arbol" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POS_Consulta_Cabecera">
+      <soap12:operation soapAction="http://tempuri.org/POS_Consulta_Cabecera" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POW_Evento_Consulta">
+      <soap12:operation soapAction="http://tempuri.org/POW_Evento_Consulta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POW_Evento_Inserta_Nuevo">
+      <soap12:operation soapAction="http://tempuri.org/POW_Evento_Inserta_Nuevo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POW_Evento_Inserta">
+      <soap12:operation soapAction="http://tempuri.org/POW_Evento_Inserta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POS_ActualizaCabecera">
+      <soap12:operation soapAction="http://tempuri.org/POS_ActualizaCabecera" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidaUsuario">
+      <soap12:operation soapAction="http://tempuri.org/ValidaUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POS_ActualizaDetalle">
+      <soap12:operation soapAction="http://tempuri.org/POS_ActualizaDetalle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POS_ActualizaPagos">
+      <soap12:operation soapAction="http://tempuri.org/POS_ActualizaPagos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POS_TipoTarjetasdeCreditoGet">
+      <soap12:operation soapAction="http://tempuri.org/POS_TipoTarjetasdeCreditoGet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POS_Correlativo">
+      <soap12:operation soapAction="http://tempuri.org/POS_Correlativo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POS_Autentifica">
+      <soap12:operation soapAction="http://tempuri.org/POS_Autentifica" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POS_Autentifica2">
+      <soap12:operation soapAction="http://tempuri.org/POS_Autentifica2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidaRolUsuarioWop">
+      <soap12:operation soapAction="http://tempuri.org/ValidaRolUsuarioWop" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POS_IngresaRespaldoArqueo">
+      <soap12:operation soapAction="http://tempuri.org/POS_IngresaRespaldoArqueo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POS_Documento">
+      <soap12:operation soapAction="http://tempuri.org/POS_Documento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POS_Parametros_Configuracion">
+      <soap12:operation soapAction="http://tempuri.org/POS_Parametros_Configuracion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POS_Regiones">
+      <soap12:operation soapAction="http://tempuri.org/POS_Regiones" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POS_Ciudades">
+      <soap12:operation soapAction="http://tempuri.org/POS_Ciudades" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POS_Comunas">
+      <soap12:operation soapAction="http://tempuri.org/POS_Comunas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POS_Documentos">
+      <soap12:operation soapAction="http://tempuri.org/POS_Documentos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POS_Documentos_Wop">
+      <soap12:operation soapAction="http://tempuri.org/POS_Documentos_Wop" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POS_Cajeros">
+      <soap12:operation soapAction="http://tempuri.org/POS_Cajeros" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POS_Concilia">
+      <soap12:operation soapAction="http://tempuri.org/POS_Concilia" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POS_Ayuda">
+      <soap12:operation soapAction="http://tempuri.org/POS_Ayuda" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POS_Actividades">
+      <soap12:operation soapAction="http://tempuri.org/POS_Actividades" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POS_ValidaStock">
+      <soap12:operation soapAction="http://tempuri.org/POS_ValidaStock" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WEB_Usuarios">
+      <soap12:operation soapAction="http://tempuri.org/WEB_Usuarios" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WEB_Arbol">
+      <soap12:operation soapAction="http://tempuri.org/WEB_Arbol" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WPL_Sku_Atributos">
+      <soap12:operation soapAction="http://tempuri.org/WPL_Sku_Atributos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WEB_Atributos">
+      <soap12:operation soapAction="http://tempuri.org/WEB_Atributos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POS_CAJAS">
+      <soap12:operation soapAction="http://tempuri.org/POS_CAJAS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="POS_Parametros">
+      <soap12:operation soapAction="http://tempuri.org/POS_Parametros" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WEB_Password">
+      <soap12:operation soapAction="http://tempuri.org/WEB_Password" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WEB_Consulta">
+      <soap12:operation soapAction="http://tempuri.org/WEB_Consulta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WEB_Giros">
+      <soap12:operation soapAction="http://tempuri.org/WEB_Giros" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WEB_Imagenes">
+      <soap12:operation soapAction="http://tempuri.org/WEB_Imagenes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WPL_LeeParametrosAdminWeb">
+      <soap12:operation soapAction="http://tempuri.org/WPL_LeeParametrosAdminWeb" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Pos">
+    <wsdl:port name="PosSoap" binding="tns:PosSoap">
+      <soap:address location="http://192.168.1.230/wspos/pos.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PosSoap12" binding="tns:PosSoap12">
+      <soap12:address location="http://192.168.1.230/wspos/pos.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

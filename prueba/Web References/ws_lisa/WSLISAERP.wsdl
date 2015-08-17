@@ -1,0 +1,3258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://steward.cl/wservicesLisaERP" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://steward.cl/wservicesLisaERP" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://steward.cl/wservicesLisaERP">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="ConsultaStock">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCodigoEmpresa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCodigoBodega" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCodigoProducto" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="fltPorcentajeIncidencia" type="s:float" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaStockResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaStockResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaListaPrecio">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCodigoEmpresa" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intListaPrecio" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaListaPrecioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaListaPrecioResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregaDireccion888">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCodigoEmpresa" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intRutClienteSinDV" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregaDireccion888Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgregaDireccion888Result">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregaDireccion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCodigoEmpresa" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intRutClienteSinDV" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDireccionDetalle" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intCodigoRegion" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intCodigoCiudad" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intCodigoComuna" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intEsDireccionFacturacion" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregaDireccionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgregaDireccionResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregaContacto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCodigoEmpresa" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intRutClienteSinDV" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strNombreContacto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MBAUXCTOTI" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intPrefijoTelefonoContacto" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intTelefonoContacto" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intPrefijoTelefonoMovilContacto" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intTelefonoMovilContacto" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intPrefijoFaxContacto" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intFaxContacto" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMailContacto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MBAUXCTOCI" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intCodigoTelefonicoPais" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intCodigoDireccion" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRutContactoSinDV" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDVContacto" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregaContactoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgregaContactoResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregaCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCodigoEmpresa" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intRutClienteSinDV" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDigitoVerificador" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRazonSocial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strNombreFantasia" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intCodigoGiro" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intListaPrecioVenta" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intListaPrecioArriendo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intListaPrecioReposicion" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCodigoVendedor" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTipoCliente" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregaClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgregaClienteResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCodigoEmpresa" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intRutClienteSinDV" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaClienteResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Contacto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCodigoEmpresa" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intRutClienteSinDV" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ContactoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ContactoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaEstadoPedido">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCodigoEmpresa" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intFolioLisa" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaEstadoPedidoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaEstadoPedidoResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaEstadoCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCodigoEmpresa" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intRutClienteSinDV" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaEstadoClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaEstadoClienteResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaMontoFleteLisa">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCodigoEmpresa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strXmlListaProductos" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intCodigoComunaDespacho" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strHorarioEntrega" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strHorarioRetiro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaMontoFleteLisaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaMontoFleteLisaResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaEjecutivoVentas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCodigoEmpresa" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intRutClienteSinDV" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaEjecutivoVentasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaEjecutivoVentasResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCodigoEmpresa" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intRutClienteSinDV" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRazonNombre" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intCodigoGiro" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateClienteResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDireccion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCodigoEmpresa" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intRutClienteSinDV" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intCodigoDireccion" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDescripcionDireccion" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intCodigoRegion" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intCodigoCiudad" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intCodigoComuna" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDireccionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateDireccionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteDireccion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCodigoEmpresa" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intRutClienteSinDV" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intCodigoDireccion" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteDireccionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteDireccionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteContacto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCodigoEmpresa" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intRutClienteSinDV" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intCodigoContacto" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteContactoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteContactoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCuadroMando">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCuadroMandoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCuadroMandoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaPos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tipo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="empresa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodigoLocal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Cliente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sku" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="cantidad" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ListaPrecio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="promocion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaPosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaPosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVenedores">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Empresa" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Actividad" type="s1:char" />
+            <s:element minOccurs="0" maxOccurs="1" name="codvendedor" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVenedoresResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetVenedoresResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AutentificacionWOP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AutentificacionWOPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AutentificacionWOPResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaProductosFiltrados">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Tipo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Empresa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Patron" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="listaPrecio" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaProductosFiltradosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaProductosFiltradosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaCreditoSteward">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="empresa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cliente" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="monto" type="s:float" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaCreditoStewardResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaCreditoStewardResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaTerminosDePago">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tipo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaTerminosDePagoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaTerminosDePagoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PerfilCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tipo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rut" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PerfilClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PerfilClienteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Folios">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tipo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="empresa" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="sede" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ptoventa" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="tipodoc" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="folio" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FoliosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FoliosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Cobranza">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="rut" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CobranzaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CobranzaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Giros">
+        <s:complexType />
+      </s:element>
+      <s:element name="GirosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GirosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FiltroClientes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="descripcion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FiltroClientesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FiltroClientesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExistenciaDocumentosPago">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoPago" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExistenciaDocumentosPagoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExistenciaDocumentosPagoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModuloExistenciaLisa">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Tipo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Cadena1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Cadena2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Cadena3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Cadena4" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Cadena5" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Cadena6" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Cantidad" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModuloExistenciaLisaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ModuloExistenciaLisaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WPL_AdminComprasDespacho">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tipo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rutcliente" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fechadesde" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fechahasta" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="folionv" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="use_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="adm_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="cli_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="cc_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ordencompra" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="listanv" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WPL_AdminComprasDespachoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WPL_AdminComprasDespachoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WPL_StockBodegaUbicacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Empresa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Bodega" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sku" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WPL_StockBodegaUbicacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WPL_StockBodegaUbicacionResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WPL_ListaBodegas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="empresa" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WPL_ListaBodegasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WPL_ListaBodegasResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WPA_ActualizaEstadoContrato">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tipo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="folio" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WPA_ActualizaEstadoContratoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WPA_ActualizaEstadoContratoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="DataSet" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:element ref="s:schema" />
+            <s:any />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="boolean" type="s:boolean" />
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="char">
+        <s:restriction base="s:unsignedShort" />
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ConsultaStockSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaStock" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaStockSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaStockResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaListaPrecioSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaListaPrecio" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaListaPrecioSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaListaPrecioResponse" />
+  </wsdl:message>
+  <wsdl:message name="AgregaDireccion888SoapIn">
+    <wsdl:part name="parameters" element="tns:AgregaDireccion888" />
+  </wsdl:message>
+  <wsdl:message name="AgregaDireccion888SoapOut">
+    <wsdl:part name="parameters" element="tns:AgregaDireccion888Response" />
+  </wsdl:message>
+  <wsdl:message name="AgregaDireccionSoapIn">
+    <wsdl:part name="parameters" element="tns:AgregaDireccion" />
+  </wsdl:message>
+  <wsdl:message name="AgregaDireccionSoapOut">
+    <wsdl:part name="parameters" element="tns:AgregaDireccionResponse" />
+  </wsdl:message>
+  <wsdl:message name="AgregaContactoSoapIn">
+    <wsdl:part name="parameters" element="tns:AgregaContacto" />
+  </wsdl:message>
+  <wsdl:message name="AgregaContactoSoapOut">
+    <wsdl:part name="parameters" element="tns:AgregaContactoResponse" />
+  </wsdl:message>
+  <wsdl:message name="AgregaClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:AgregaCliente" />
+  </wsdl:message>
+  <wsdl:message name="AgregaClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:AgregaClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaCliente" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ContactoSoapIn">
+    <wsdl:part name="parameters" element="tns:Contacto" />
+  </wsdl:message>
+  <wsdl:message name="ContactoSoapOut">
+    <wsdl:part name="parameters" element="tns:ContactoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaEstadoPedidoSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaEstadoPedido" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaEstadoPedidoSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaEstadoPedidoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaEstadoClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaEstadoCliente" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaEstadoClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaEstadoClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaMontoFleteLisaSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaMontoFleteLisa" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaMontoFleteLisaSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaMontoFleteLisaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaEjecutivoVentasSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaEjecutivoVentas" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaEjecutivoVentasSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaEjecutivoVentasResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateCliente" />
+  </wsdl:message>
+  <wsdl:message name="UpdateClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDireccionSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateDireccion" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDireccionSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateDireccionResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteDireccionSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteDireccion" />
+  </wsdl:message>
+  <wsdl:message name="DeleteDireccionSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteDireccionResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteContactoSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteContacto" />
+  </wsdl:message>
+  <wsdl:message name="DeleteContactoSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteContactoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCuadroMandoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCuadroMando" />
+  </wsdl:message>
+  <wsdl:message name="GetCuadroMandoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCuadroMandoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaPosSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaPos" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaPosSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaPosResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVenedoresSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVenedores" />
+  </wsdl:message>
+  <wsdl:message name="GetVenedoresSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVenedoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="AutentificacionWOPSoapIn">
+    <wsdl:part name="parameters" element="tns:AutentificacionWOP" />
+  </wsdl:message>
+  <wsdl:message name="AutentificacionWOPSoapOut">
+    <wsdl:part name="parameters" element="tns:AutentificacionWOPResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaProductosFiltradosSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaProductosFiltrados" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaProductosFiltradosSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaProductosFiltradosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaCreditoStewardSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaCreditoSteward" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaCreditoStewardSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaCreditoStewardResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaTerminosDePagoSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaTerminosDePago" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaTerminosDePagoSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaTerminosDePagoResponse" />
+  </wsdl:message>
+  <wsdl:message name="PerfilClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:PerfilCliente" />
+  </wsdl:message>
+  <wsdl:message name="PerfilClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:PerfilClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="FoliosSoapIn">
+    <wsdl:part name="parameters" element="tns:Folios" />
+  </wsdl:message>
+  <wsdl:message name="FoliosSoapOut">
+    <wsdl:part name="parameters" element="tns:FoliosResponse" />
+  </wsdl:message>
+  <wsdl:message name="CobranzaSoapIn">
+    <wsdl:part name="parameters" element="tns:Cobranza" />
+  </wsdl:message>
+  <wsdl:message name="CobranzaSoapOut">
+    <wsdl:part name="parameters" element="tns:CobranzaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GirosSoapIn">
+    <wsdl:part name="parameters" element="tns:Giros" />
+  </wsdl:message>
+  <wsdl:message name="GirosSoapOut">
+    <wsdl:part name="parameters" element="tns:GirosResponse" />
+  </wsdl:message>
+  <wsdl:message name="FiltroClientesSoapIn">
+    <wsdl:part name="parameters" element="tns:FiltroClientes" />
+  </wsdl:message>
+  <wsdl:message name="FiltroClientesSoapOut">
+    <wsdl:part name="parameters" element="tns:FiltroClientesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExistenciaDocumentosPagoSoapIn">
+    <wsdl:part name="parameters" element="tns:ExistenciaDocumentosPago" />
+  </wsdl:message>
+  <wsdl:message name="ExistenciaDocumentosPagoSoapOut">
+    <wsdl:part name="parameters" element="tns:ExistenciaDocumentosPagoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ModuloExistenciaLisaSoapIn">
+    <wsdl:part name="parameters" element="tns:ModuloExistenciaLisa" />
+  </wsdl:message>
+  <wsdl:message name="ModuloExistenciaLisaSoapOut">
+    <wsdl:part name="parameters" element="tns:ModuloExistenciaLisaResponse" />
+  </wsdl:message>
+  <wsdl:message name="WPL_AdminComprasDespachoSoapIn">
+    <wsdl:part name="parameters" element="tns:WPL_AdminComprasDespacho" />
+  </wsdl:message>
+  <wsdl:message name="WPL_AdminComprasDespachoSoapOut">
+    <wsdl:part name="parameters" element="tns:WPL_AdminComprasDespachoResponse" />
+  </wsdl:message>
+  <wsdl:message name="WPL_StockBodegaUbicacionSoapIn">
+    <wsdl:part name="parameters" element="tns:WPL_StockBodegaUbicacion" />
+  </wsdl:message>
+  <wsdl:message name="WPL_StockBodegaUbicacionSoapOut">
+    <wsdl:part name="parameters" element="tns:WPL_StockBodegaUbicacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="WPL_ListaBodegasSoapIn">
+    <wsdl:part name="parameters" element="tns:WPL_ListaBodegas" />
+  </wsdl:message>
+  <wsdl:message name="WPL_ListaBodegasSoapOut">
+    <wsdl:part name="parameters" element="tns:WPL_ListaBodegasResponse" />
+  </wsdl:message>
+  <wsdl:message name="WPA_ActualizaEstadoContratoSoapIn">
+    <wsdl:part name="parameters" element="tns:WPA_ActualizaEstadoContrato" />
+  </wsdl:message>
+  <wsdl:message name="WPA_ActualizaEstadoContratoSoapOut">
+    <wsdl:part name="parameters" element="tns:WPA_ActualizaEstadoContratoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaStockHttpGetIn">
+    <wsdl:part name="strCodigoEmpresa" type="s:string" />
+    <wsdl:part name="strCodigoBodega" type="s:string" />
+    <wsdl:part name="strCodigoProducto" type="s:string" />
+    <wsdl:part name="fltPorcentajeIncidencia" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaStockHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaListaPrecioHttpGetIn">
+    <wsdl:part name="strCodigoEmpresa" type="s:string" />
+    <wsdl:part name="intListaPrecio" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaListaPrecioHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="AgregaDireccion888HttpGetIn">
+    <wsdl:part name="strCodigoEmpresa" type="s:string" />
+    <wsdl:part name="intRutClienteSinDV" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AgregaDireccion888HttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="AgregaDireccionHttpGetIn">
+    <wsdl:part name="strCodigoEmpresa" type="s:string" />
+    <wsdl:part name="intRutClienteSinDV" type="s:string" />
+    <wsdl:part name="strDireccionDetalle" type="s:string" />
+    <wsdl:part name="intCodigoRegion" type="s:string" />
+    <wsdl:part name="intCodigoCiudad" type="s:string" />
+    <wsdl:part name="intCodigoComuna" type="s:string" />
+    <wsdl:part name="intEsDireccionFacturacion" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AgregaDireccionHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="AgregaContactoHttpGetIn">
+    <wsdl:part name="strCodigoEmpresa" type="s:string" />
+    <wsdl:part name="intRutClienteSinDV" type="s:string" />
+    <wsdl:part name="strNombreContacto" type="s:string" />
+    <wsdl:part name="MBAUXCTOTI" type="s:string" />
+    <wsdl:part name="intPrefijoTelefonoContacto" type="s:string" />
+    <wsdl:part name="intTelefonoContacto" type="s:string" />
+    <wsdl:part name="intPrefijoTelefonoMovilContacto" type="s:string" />
+    <wsdl:part name="intTelefonoMovilContacto" type="s:string" />
+    <wsdl:part name="intPrefijoFaxContacto" type="s:string" />
+    <wsdl:part name="intFaxContacto" type="s:string" />
+    <wsdl:part name="strMailContacto" type="s:string" />
+    <wsdl:part name="MBAUXCTOCI" type="s:string" />
+    <wsdl:part name="intCodigoTelefonicoPais" type="s:string" />
+    <wsdl:part name="intCodigoDireccion" type="s:string" />
+    <wsdl:part name="strRutContactoSinDV" type="s:string" />
+    <wsdl:part name="strDVContacto" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AgregaContactoHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="AgregaClienteHttpGetIn">
+    <wsdl:part name="strCodigoEmpresa" type="s:string" />
+    <wsdl:part name="intRutClienteSinDV" type="s:string" />
+    <wsdl:part name="strDigitoVerificador" type="s:string" />
+    <wsdl:part name="strRazonSocial" type="s:string" />
+    <wsdl:part name="strNombreFantasia" type="s:string" />
+    <wsdl:part name="intCodigoGiro" type="s:string" />
+    <wsdl:part name="intListaPrecioVenta" type="s:string" />
+    <wsdl:part name="intListaPrecioArriendo" type="s:string" />
+    <wsdl:part name="intListaPrecioReposicion" type="s:string" />
+    <wsdl:part name="strCodigoVendedor" type="s:string" />
+    <wsdl:part name="strTipoCliente" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AgregaClienteHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaClienteHttpGetIn">
+    <wsdl:part name="strCodigoEmpresa" type="s:string" />
+    <wsdl:part name="intRutClienteSinDV" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaClienteHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ContactoHttpGetIn">
+    <wsdl:part name="strCodigoEmpresa" type="s:string" />
+    <wsdl:part name="intRutClienteSinDV" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ContactoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaEstadoPedidoHttpGetIn">
+    <wsdl:part name="strCodigoEmpresa" type="s:string" />
+    <wsdl:part name="intFolioLisa" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaEstadoPedidoHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaEstadoClienteHttpGetIn">
+    <wsdl:part name="strCodigoEmpresa" type="s:string" />
+    <wsdl:part name="intRutClienteSinDV" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaEstadoClienteHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaMontoFleteLisaHttpGetIn">
+    <wsdl:part name="strCodigoEmpresa" type="s:string" />
+    <wsdl:part name="strXmlListaProductos" type="s:string" />
+    <wsdl:part name="intCodigoComunaDespacho" type="s:string" />
+    <wsdl:part name="strHorarioEntrega" type="s:string" />
+    <wsdl:part name="strHorarioRetiro" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaMontoFleteLisaHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaEjecutivoVentasHttpGetIn">
+    <wsdl:part name="strCodigoEmpresa" type="s:string" />
+    <wsdl:part name="intRutClienteSinDV" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaEjecutivoVentasHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="UpdateClienteHttpGetIn">
+    <wsdl:part name="strCodigoEmpresa" type="s:string" />
+    <wsdl:part name="intRutClienteSinDV" type="s:string" />
+    <wsdl:part name="strRazonNombre" type="s:string" />
+    <wsdl:part name="intCodigoGiro" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateClienteHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDireccionHttpGetIn">
+    <wsdl:part name="strCodigoEmpresa" type="s:string" />
+    <wsdl:part name="intRutClienteSinDV" type="s:string" />
+    <wsdl:part name="intCodigoDireccion" type="s:string" />
+    <wsdl:part name="strDescripcionDireccion" type="s:string" />
+    <wsdl:part name="intCodigoRegion" type="s:string" />
+    <wsdl:part name="intCodigoCiudad" type="s:string" />
+    <wsdl:part name="intCodigoComuna" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDireccionHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="DeleteDireccionHttpGetIn">
+    <wsdl:part name="strCodigoEmpresa" type="s:string" />
+    <wsdl:part name="intRutClienteSinDV" type="s:string" />
+    <wsdl:part name="intCodigoDireccion" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteDireccionHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="DeleteContactoHttpGetIn">
+    <wsdl:part name="strCodigoEmpresa" type="s:string" />
+    <wsdl:part name="intRutClienteSinDV" type="s:string" />
+    <wsdl:part name="intCodigoContacto" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteContactoHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetCuadroMandoHttpGetIn" />
+  <wsdl:message name="GetCuadroMandoHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaPosHttpGetIn">
+    <wsdl:part name="tipo" type="s:string" />
+    <wsdl:part name="empresa" type="s:string" />
+    <wsdl:part name="CodigoLocal" type="s:string" />
+    <wsdl:part name="Cliente" type="s:string" />
+    <wsdl:part name="sku" type="s:string" />
+    <wsdl:part name="cantidad" type="s:string" />
+    <wsdl:part name="ListaPrecio" type="s:string" />
+    <wsdl:part name="promocion" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaPosHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetVenedoresHttpGetIn">
+    <wsdl:part name="Empresa" type="s:string" />
+    <wsdl:part name="Actividad" type="s:string" />
+    <wsdl:part name="codvendedor" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetVenedoresHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="AutentificacionWOPHttpGetIn">
+    <wsdl:part name="Usuario" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AutentificacionWOPHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaProductosFiltradosHttpGetIn">
+    <wsdl:part name="Tipo" type="s:string" />
+    <wsdl:part name="Empresa" type="s:string" />
+    <wsdl:part name="Patron" type="s:string" />
+    <wsdl:part name="listaPrecio" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaProductosFiltradosHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaCreditoStewardHttpGetIn">
+    <wsdl:part name="empresa" type="s:string" />
+    <wsdl:part name="cliente" type="s:string" />
+    <wsdl:part name="monto" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaCreditoStewardHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaTerminosDePagoHttpGetIn">
+    <wsdl:part name="tipo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaTerminosDePagoHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="PerfilClienteHttpGetIn">
+    <wsdl:part name="tipo" type="s:string" />
+    <wsdl:part name="rut" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PerfilClienteHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="FoliosHttpGetIn">
+    <wsdl:part name="tipo" type="s:string" />
+    <wsdl:part name="empresa" type="s:string" />
+    <wsdl:part name="sede" type="s:string" />
+    <wsdl:part name="ptoventa" type="s:string" />
+    <wsdl:part name="tipodoc" type="s:string" />
+    <wsdl:part name="folio" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="FoliosHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="CobranzaHttpGetIn">
+    <wsdl:part name="rut" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CobranzaHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GirosHttpGetIn" />
+  <wsdl:message name="GirosHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="FiltroClientesHttpGetIn">
+    <wsdl:part name="descripcion" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="FiltroClientesHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="ExistenciaDocumentosPagoHttpGetIn">
+    <wsdl:part name="codigo" type="s:string" />
+    <wsdl:part name="TipoPago" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExistenciaDocumentosPagoHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="ModuloExistenciaLisaHttpGetIn">
+    <wsdl:part name="Tipo" type="s:string" />
+    <wsdl:part name="Cadena1" type="s:string" />
+    <wsdl:part name="Cadena2" type="s:string" />
+    <wsdl:part name="Cadena3" type="s:string" />
+    <wsdl:part name="Cadena4" type="s:string" />
+    <wsdl:part name="Cadena5" type="s:string" />
+    <wsdl:part name="Cadena6" type="s:string" />
+    <wsdl:part name="Cantidad" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ModuloExistenciaLisaHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="WPL_AdminComprasDespachoHttpGetIn">
+    <wsdl:part name="tipo" type="s:string" />
+    <wsdl:part name="rutcliente" type="s:string" />
+    <wsdl:part name="fechadesde" type="s:string" />
+    <wsdl:part name="fechahasta" type="s:string" />
+    <wsdl:part name="folionv" type="s:string" />
+    <wsdl:part name="use_id" type="s:string" />
+    <wsdl:part name="adm_id" type="s:string" />
+    <wsdl:part name="cli_id" type="s:string" />
+    <wsdl:part name="cc_id" type="s:string" />
+    <wsdl:part name="ordencompra" type="s:string" />
+    <wsdl:part name="listanv" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="WPL_AdminComprasDespachoHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="WPL_StockBodegaUbicacionHttpGetIn">
+    <wsdl:part name="Empresa" type="s:string" />
+    <wsdl:part name="Bodega" type="s:string" />
+    <wsdl:part name="Sku" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="WPL_StockBodegaUbicacionHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="WPL_ListaBodegasHttpGetIn">
+    <wsdl:part name="empresa" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="WPL_ListaBodegasHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="WPA_ActualizaEstadoContratoHttpGetIn">
+    <wsdl:part name="accion" type="s:string" />
+    <wsdl:part name="tipo" type="s:string" />
+    <wsdl:part name="folio" type="s:string" />
+    <wsdl:part name="usuario" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="WPA_ActualizaEstadoContratoHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaStockHttpPostIn">
+    <wsdl:part name="strCodigoEmpresa" type="s:string" />
+    <wsdl:part name="strCodigoBodega" type="s:string" />
+    <wsdl:part name="strCodigoProducto" type="s:string" />
+    <wsdl:part name="fltPorcentajeIncidencia" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaStockHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaListaPrecioHttpPostIn">
+    <wsdl:part name="strCodigoEmpresa" type="s:string" />
+    <wsdl:part name="intListaPrecio" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaListaPrecioHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="AgregaDireccion888HttpPostIn">
+    <wsdl:part name="strCodigoEmpresa" type="s:string" />
+    <wsdl:part name="intRutClienteSinDV" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AgregaDireccion888HttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="AgregaDireccionHttpPostIn">
+    <wsdl:part name="strCodigoEmpresa" type="s:string" />
+    <wsdl:part name="intRutClienteSinDV" type="s:string" />
+    <wsdl:part name="strDireccionDetalle" type="s:string" />
+    <wsdl:part name="intCodigoRegion" type="s:string" />
+    <wsdl:part name="intCodigoCiudad" type="s:string" />
+    <wsdl:part name="intCodigoComuna" type="s:string" />
+    <wsdl:part name="intEsDireccionFacturacion" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AgregaDireccionHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="AgregaContactoHttpPostIn">
+    <wsdl:part name="strCodigoEmpresa" type="s:string" />
+    <wsdl:part name="intRutClienteSinDV" type="s:string" />
+    <wsdl:part name="strNombreContacto" type="s:string" />
+    <wsdl:part name="MBAUXCTOTI" type="s:string" />
+    <wsdl:part name="intPrefijoTelefonoContacto" type="s:string" />
+    <wsdl:part name="intTelefonoContacto" type="s:string" />
+    <wsdl:part name="intPrefijoTelefonoMovilContacto" type="s:string" />
+    <wsdl:part name="intTelefonoMovilContacto" type="s:string" />
+    <wsdl:part name="intPrefijoFaxContacto" type="s:string" />
+    <wsdl:part name="intFaxContacto" type="s:string" />
+    <wsdl:part name="strMailContacto" type="s:string" />
+    <wsdl:part name="MBAUXCTOCI" type="s:string" />
+    <wsdl:part name="intCodigoTelefonicoPais" type="s:string" />
+    <wsdl:part name="intCodigoDireccion" type="s:string" />
+    <wsdl:part name="strRutContactoSinDV" type="s:string" />
+    <wsdl:part name="strDVContacto" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AgregaContactoHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="AgregaClienteHttpPostIn">
+    <wsdl:part name="strCodigoEmpresa" type="s:string" />
+    <wsdl:part name="intRutClienteSinDV" type="s:string" />
+    <wsdl:part name="strDigitoVerificador" type="s:string" />
+    <wsdl:part name="strRazonSocial" type="s:string" />
+    <wsdl:part name="strNombreFantasia" type="s:string" />
+    <wsdl:part name="intCodigoGiro" type="s:string" />
+    <wsdl:part name="intListaPrecioVenta" type="s:string" />
+    <wsdl:part name="intListaPrecioArriendo" type="s:string" />
+    <wsdl:part name="intListaPrecioReposicion" type="s:string" />
+    <wsdl:part name="strCodigoVendedor" type="s:string" />
+    <wsdl:part name="strTipoCliente" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AgregaClienteHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaClienteHttpPostIn">
+    <wsdl:part name="strCodigoEmpresa" type="s:string" />
+    <wsdl:part name="intRutClienteSinDV" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaClienteHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ContactoHttpPostIn">
+    <wsdl:part name="strCodigoEmpresa" type="s:string" />
+    <wsdl:part name="intRutClienteSinDV" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ContactoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaEstadoPedidoHttpPostIn">
+    <wsdl:part name="strCodigoEmpresa" type="s:string" />
+    <wsdl:part name="intFolioLisa" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaEstadoPedidoHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaEstadoClienteHttpPostIn">
+    <wsdl:part name="strCodigoEmpresa" type="s:string" />
+    <wsdl:part name="intRutClienteSinDV" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaEstadoClienteHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaMontoFleteLisaHttpPostIn">
+    <wsdl:part name="strCodigoEmpresa" type="s:string" />
+    <wsdl:part name="strXmlListaProductos" type="s:string" />
+    <wsdl:part name="intCodigoComunaDespacho" type="s:string" />
+    <wsdl:part name="strHorarioEntrega" type="s:string" />
+    <wsdl:part name="strHorarioRetiro" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaMontoFleteLisaHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaEjecutivoVentasHttpPostIn">
+    <wsdl:part name="strCodigoEmpresa" type="s:string" />
+    <wsdl:part name="intRutClienteSinDV" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaEjecutivoVentasHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="UpdateClienteHttpPostIn">
+    <wsdl:part name="strCodigoEmpresa" type="s:string" />
+    <wsdl:part name="intRutClienteSinDV" type="s:string" />
+    <wsdl:part name="strRazonNombre" type="s:string" />
+    <wsdl:part name="intCodigoGiro" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateClienteHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDireccionHttpPostIn">
+    <wsdl:part name="strCodigoEmpresa" type="s:string" />
+    <wsdl:part name="intRutClienteSinDV" type="s:string" />
+    <wsdl:part name="intCodigoDireccion" type="s:string" />
+    <wsdl:part name="strDescripcionDireccion" type="s:string" />
+    <wsdl:part name="intCodigoRegion" type="s:string" />
+    <wsdl:part name="intCodigoCiudad" type="s:string" />
+    <wsdl:part name="intCodigoComuna" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDireccionHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="DeleteDireccionHttpPostIn">
+    <wsdl:part name="strCodigoEmpresa" type="s:string" />
+    <wsdl:part name="intRutClienteSinDV" type="s:string" />
+    <wsdl:part name="intCodigoDireccion" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteDireccionHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="DeleteContactoHttpPostIn">
+    <wsdl:part name="strCodigoEmpresa" type="s:string" />
+    <wsdl:part name="intRutClienteSinDV" type="s:string" />
+    <wsdl:part name="intCodigoContacto" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteContactoHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetCuadroMandoHttpPostIn" />
+  <wsdl:message name="GetCuadroMandoHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaPosHttpPostIn">
+    <wsdl:part name="tipo" type="s:string" />
+    <wsdl:part name="empresa" type="s:string" />
+    <wsdl:part name="CodigoLocal" type="s:string" />
+    <wsdl:part name="Cliente" type="s:string" />
+    <wsdl:part name="sku" type="s:string" />
+    <wsdl:part name="cantidad" type="s:string" />
+    <wsdl:part name="ListaPrecio" type="s:string" />
+    <wsdl:part name="promocion" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaPosHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetVenedoresHttpPostIn">
+    <wsdl:part name="Empresa" type="s:string" />
+    <wsdl:part name="Actividad" type="s:string" />
+    <wsdl:part name="codvendedor" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetVenedoresHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="AutentificacionWOPHttpPostIn">
+    <wsdl:part name="Usuario" type="s:string" />
+    <wsdl:part name="password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AutentificacionWOPHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaProductosFiltradosHttpPostIn">
+    <wsdl:part name="Tipo" type="s:string" />
+    <wsdl:part name="Empresa" type="s:string" />
+    <wsdl:part name="Patron" type="s:string" />
+    <wsdl:part name="listaPrecio" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaProductosFiltradosHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaCreditoStewardHttpPostIn">
+    <wsdl:part name="empresa" type="s:string" />
+    <wsdl:part name="cliente" type="s:string" />
+    <wsdl:part name="monto" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaCreditoStewardHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaTerminosDePagoHttpPostIn">
+    <wsdl:part name="tipo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaTerminosDePagoHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="PerfilClienteHttpPostIn">
+    <wsdl:part name="tipo" type="s:string" />
+    <wsdl:part name="rut" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PerfilClienteHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="FoliosHttpPostIn">
+    <wsdl:part name="tipo" type="s:string" />
+    <wsdl:part name="empresa" type="s:string" />
+    <wsdl:part name="sede" type="s:string" />
+    <wsdl:part name="ptoventa" type="s:string" />
+    <wsdl:part name="tipodoc" type="s:string" />
+    <wsdl:part name="folio" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="FoliosHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="CobranzaHttpPostIn">
+    <wsdl:part name="rut" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CobranzaHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GirosHttpPostIn" />
+  <wsdl:message name="GirosHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="FiltroClientesHttpPostIn">
+    <wsdl:part name="descripcion" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="FiltroClientesHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="ExistenciaDocumentosPagoHttpPostIn">
+    <wsdl:part name="codigo" type="s:string" />
+    <wsdl:part name="TipoPago" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExistenciaDocumentosPagoHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="ModuloExistenciaLisaHttpPostIn">
+    <wsdl:part name="Tipo" type="s:string" />
+    <wsdl:part name="Cadena1" type="s:string" />
+    <wsdl:part name="Cadena2" type="s:string" />
+    <wsdl:part name="Cadena3" type="s:string" />
+    <wsdl:part name="Cadena4" type="s:string" />
+    <wsdl:part name="Cadena5" type="s:string" />
+    <wsdl:part name="Cadena6" type="s:string" />
+    <wsdl:part name="Cantidad" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ModuloExistenciaLisaHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="WPL_AdminComprasDespachoHttpPostIn">
+    <wsdl:part name="tipo" type="s:string" />
+    <wsdl:part name="rutcliente" type="s:string" />
+    <wsdl:part name="fechadesde" type="s:string" />
+    <wsdl:part name="fechahasta" type="s:string" />
+    <wsdl:part name="folionv" type="s:string" />
+    <wsdl:part name="use_id" type="s:string" />
+    <wsdl:part name="adm_id" type="s:string" />
+    <wsdl:part name="cli_id" type="s:string" />
+    <wsdl:part name="cc_id" type="s:string" />
+    <wsdl:part name="ordencompra" type="s:string" />
+    <wsdl:part name="listanv" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="WPL_AdminComprasDespachoHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="WPL_StockBodegaUbicacionHttpPostIn">
+    <wsdl:part name="Empresa" type="s:string" />
+    <wsdl:part name="Bodega" type="s:string" />
+    <wsdl:part name="Sku" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="WPL_StockBodegaUbicacionHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="WPL_ListaBodegasHttpPostIn">
+    <wsdl:part name="empresa" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="WPL_ListaBodegasHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="WPA_ActualizaEstadoContratoHttpPostIn">
+    <wsdl:part name="accion" type="s:string" />
+    <wsdl:part name="tipo" type="s:string" />
+    <wsdl:part name="folio" type="s:string" />
+    <wsdl:part name="usuario" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="WPA_ActualizaEstadoContratoHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:portType name="WS_LisaSoap">
+    <wsdl:operation name="ConsultaStock">
+      <wsdl:input message="tns:ConsultaStockSoapIn" />
+      <wsdl:output message="tns:ConsultaStockSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaListaPrecio">
+      <wsdl:input message="tns:ConsultaListaPrecioSoapIn" />
+      <wsdl:output message="tns:ConsultaListaPrecioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregaDireccion888">
+      <wsdl:input message="tns:AgregaDireccion888SoapIn" />
+      <wsdl:output message="tns:AgregaDireccion888SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregaDireccion">
+      <wsdl:input message="tns:AgregaDireccionSoapIn" />
+      <wsdl:output message="tns:AgregaDireccionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregaContacto">
+      <wsdl:input message="tns:AgregaContactoSoapIn" />
+      <wsdl:output message="tns:AgregaContactoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregaCliente">
+      <wsdl:input message="tns:AgregaClienteSoapIn" />
+      <wsdl:output message="tns:AgregaClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaCliente">
+      <wsdl:input message="tns:ConsultaClienteSoapIn" />
+      <wsdl:output message="tns:ConsultaClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Contacto">
+      <wsdl:input message="tns:ContactoSoapIn" />
+      <wsdl:output message="tns:ContactoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaEstadoPedido">
+      <wsdl:input message="tns:ConsultaEstadoPedidoSoapIn" />
+      <wsdl:output message="tns:ConsultaEstadoPedidoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaEstadoCliente">
+      <wsdl:input message="tns:ConsultaEstadoClienteSoapIn" />
+      <wsdl:output message="tns:ConsultaEstadoClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaMontoFleteLisa">
+      <wsdl:input message="tns:ConsultaMontoFleteLisaSoapIn" />
+      <wsdl:output message="tns:ConsultaMontoFleteLisaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaEjecutivoVentas">
+      <wsdl:input message="tns:ConsultaEjecutivoVentasSoapIn" />
+      <wsdl:output message="tns:ConsultaEjecutivoVentasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCliente">
+      <wsdl:input message="tns:UpdateClienteSoapIn" />
+      <wsdl:output message="tns:UpdateClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDireccion">
+      <wsdl:input message="tns:UpdateDireccionSoapIn" />
+      <wsdl:output message="tns:UpdateDireccionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDireccion">
+      <wsdl:input message="tns:DeleteDireccionSoapIn" />
+      <wsdl:output message="tns:DeleteDireccionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteContacto">
+      <wsdl:input message="tns:DeleteContactoSoapIn" />
+      <wsdl:output message="tns:DeleteContactoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCuadroMando">
+      <wsdl:input message="tns:GetCuadroMandoSoapIn" />
+      <wsdl:output message="tns:GetCuadroMandoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaPos">
+      <wsdl:input message="tns:ConsultaPosSoapIn" />
+      <wsdl:output message="tns:ConsultaPosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVenedores">
+      <wsdl:input message="tns:GetVenedoresSoapIn" />
+      <wsdl:output message="tns:GetVenedoresSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AutentificacionWOP">
+      <wsdl:input message="tns:AutentificacionWOPSoapIn" />
+      <wsdl:output message="tns:AutentificacionWOPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaProductosFiltrados">
+      <wsdl:input message="tns:ConsultaProductosFiltradosSoapIn" />
+      <wsdl:output message="tns:ConsultaProductosFiltradosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaCreditoSteward">
+      <wsdl:input message="tns:ConsultaCreditoStewardSoapIn" />
+      <wsdl:output message="tns:ConsultaCreditoStewardSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaTerminosDePago">
+      <wsdl:input message="tns:ConsultaTerminosDePagoSoapIn" />
+      <wsdl:output message="tns:ConsultaTerminosDePagoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PerfilCliente">
+      <wsdl:input message="tns:PerfilClienteSoapIn" />
+      <wsdl:output message="tns:PerfilClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Folios">
+      <wsdl:input message="tns:FoliosSoapIn" />
+      <wsdl:output message="tns:FoliosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Cobranza">
+      <wsdl:input message="tns:CobranzaSoapIn" />
+      <wsdl:output message="tns:CobranzaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Giros">
+      <wsdl:input message="tns:GirosSoapIn" />
+      <wsdl:output message="tns:GirosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FiltroClientes">
+      <wsdl:input message="tns:FiltroClientesSoapIn" />
+      <wsdl:output message="tns:FiltroClientesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExistenciaDocumentosPago">
+      <wsdl:input message="tns:ExistenciaDocumentosPagoSoapIn" />
+      <wsdl:output message="tns:ExistenciaDocumentosPagoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ModuloExistenciaLisa">
+      <wsdl:input message="tns:ModuloExistenciaLisaSoapIn" />
+      <wsdl:output message="tns:ModuloExistenciaLisaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WPL_AdminComprasDespacho">
+      <wsdl:input message="tns:WPL_AdminComprasDespachoSoapIn" />
+      <wsdl:output message="tns:WPL_AdminComprasDespachoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WPL_StockBodegaUbicacion">
+      <wsdl:input message="tns:WPL_StockBodegaUbicacionSoapIn" />
+      <wsdl:output message="tns:WPL_StockBodegaUbicacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WPL_ListaBodegas">
+      <wsdl:input message="tns:WPL_ListaBodegasSoapIn" />
+      <wsdl:output message="tns:WPL_ListaBodegasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WPA_ActualizaEstadoContrato">
+      <wsdl:input message="tns:WPA_ActualizaEstadoContratoSoapIn" />
+      <wsdl:output message="tns:WPA_ActualizaEstadoContratoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WS_LisaHttpGet">
+    <wsdl:operation name="ConsultaStock">
+      <wsdl:input message="tns:ConsultaStockHttpGetIn" />
+      <wsdl:output message="tns:ConsultaStockHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaListaPrecio">
+      <wsdl:input message="tns:ConsultaListaPrecioHttpGetIn" />
+      <wsdl:output message="tns:ConsultaListaPrecioHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregaDireccion888">
+      <wsdl:input message="tns:AgregaDireccion888HttpGetIn" />
+      <wsdl:output message="tns:AgregaDireccion888HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregaDireccion">
+      <wsdl:input message="tns:AgregaDireccionHttpGetIn" />
+      <wsdl:output message="tns:AgregaDireccionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregaContacto">
+      <wsdl:input message="tns:AgregaContactoHttpGetIn" />
+      <wsdl:output message="tns:AgregaContactoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregaCliente">
+      <wsdl:input message="tns:AgregaClienteHttpGetIn" />
+      <wsdl:output message="tns:AgregaClienteHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaCliente">
+      <wsdl:input message="tns:ConsultaClienteHttpGetIn" />
+      <wsdl:output message="tns:ConsultaClienteHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Contacto">
+      <wsdl:input message="tns:ContactoHttpGetIn" />
+      <wsdl:output message="tns:ContactoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaEstadoPedido">
+      <wsdl:input message="tns:ConsultaEstadoPedidoHttpGetIn" />
+      <wsdl:output message="tns:ConsultaEstadoPedidoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaEstadoCliente">
+      <wsdl:input message="tns:ConsultaEstadoClienteHttpGetIn" />
+      <wsdl:output message="tns:ConsultaEstadoClienteHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaMontoFleteLisa">
+      <wsdl:input message="tns:ConsultaMontoFleteLisaHttpGetIn" />
+      <wsdl:output message="tns:ConsultaMontoFleteLisaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaEjecutivoVentas">
+      <wsdl:input message="tns:ConsultaEjecutivoVentasHttpGetIn" />
+      <wsdl:output message="tns:ConsultaEjecutivoVentasHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCliente">
+      <wsdl:input message="tns:UpdateClienteHttpGetIn" />
+      <wsdl:output message="tns:UpdateClienteHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDireccion">
+      <wsdl:input message="tns:UpdateDireccionHttpGetIn" />
+      <wsdl:output message="tns:UpdateDireccionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDireccion">
+      <wsdl:input message="tns:DeleteDireccionHttpGetIn" />
+      <wsdl:output message="tns:DeleteDireccionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteContacto">
+      <wsdl:input message="tns:DeleteContactoHttpGetIn" />
+      <wsdl:output message="tns:DeleteContactoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCuadroMando">
+      <wsdl:input message="tns:GetCuadroMandoHttpGetIn" />
+      <wsdl:output message="tns:GetCuadroMandoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaPos">
+      <wsdl:input message="tns:ConsultaPosHttpGetIn" />
+      <wsdl:output message="tns:ConsultaPosHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVenedores">
+      <wsdl:input message="tns:GetVenedoresHttpGetIn" />
+      <wsdl:output message="tns:GetVenedoresHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AutentificacionWOP">
+      <wsdl:input message="tns:AutentificacionWOPHttpGetIn" />
+      <wsdl:output message="tns:AutentificacionWOPHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaProductosFiltrados">
+      <wsdl:input message="tns:ConsultaProductosFiltradosHttpGetIn" />
+      <wsdl:output message="tns:ConsultaProductosFiltradosHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaCreditoSteward">
+      <wsdl:input message="tns:ConsultaCreditoStewardHttpGetIn" />
+      <wsdl:output message="tns:ConsultaCreditoStewardHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaTerminosDePago">
+      <wsdl:input message="tns:ConsultaTerminosDePagoHttpGetIn" />
+      <wsdl:output message="tns:ConsultaTerminosDePagoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PerfilCliente">
+      <wsdl:input message="tns:PerfilClienteHttpGetIn" />
+      <wsdl:output message="tns:PerfilClienteHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Folios">
+      <wsdl:input message="tns:FoliosHttpGetIn" />
+      <wsdl:output message="tns:FoliosHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Cobranza">
+      <wsdl:input message="tns:CobranzaHttpGetIn" />
+      <wsdl:output message="tns:CobranzaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Giros">
+      <wsdl:input message="tns:GirosHttpGetIn" />
+      <wsdl:output message="tns:GirosHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FiltroClientes">
+      <wsdl:input message="tns:FiltroClientesHttpGetIn" />
+      <wsdl:output message="tns:FiltroClientesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExistenciaDocumentosPago">
+      <wsdl:input message="tns:ExistenciaDocumentosPagoHttpGetIn" />
+      <wsdl:output message="tns:ExistenciaDocumentosPagoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ModuloExistenciaLisa">
+      <wsdl:input message="tns:ModuloExistenciaLisaHttpGetIn" />
+      <wsdl:output message="tns:ModuloExistenciaLisaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WPL_AdminComprasDespacho">
+      <wsdl:input message="tns:WPL_AdminComprasDespachoHttpGetIn" />
+      <wsdl:output message="tns:WPL_AdminComprasDespachoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WPL_StockBodegaUbicacion">
+      <wsdl:input message="tns:WPL_StockBodegaUbicacionHttpGetIn" />
+      <wsdl:output message="tns:WPL_StockBodegaUbicacionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WPL_ListaBodegas">
+      <wsdl:input message="tns:WPL_ListaBodegasHttpGetIn" />
+      <wsdl:output message="tns:WPL_ListaBodegasHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WPA_ActualizaEstadoContrato">
+      <wsdl:input message="tns:WPA_ActualizaEstadoContratoHttpGetIn" />
+      <wsdl:output message="tns:WPA_ActualizaEstadoContratoHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WS_LisaHttpPost">
+    <wsdl:operation name="ConsultaStock">
+      <wsdl:input message="tns:ConsultaStockHttpPostIn" />
+      <wsdl:output message="tns:ConsultaStockHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaListaPrecio">
+      <wsdl:input message="tns:ConsultaListaPrecioHttpPostIn" />
+      <wsdl:output message="tns:ConsultaListaPrecioHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregaDireccion888">
+      <wsdl:input message="tns:AgregaDireccion888HttpPostIn" />
+      <wsdl:output message="tns:AgregaDireccion888HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregaDireccion">
+      <wsdl:input message="tns:AgregaDireccionHttpPostIn" />
+      <wsdl:output message="tns:AgregaDireccionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregaContacto">
+      <wsdl:input message="tns:AgregaContactoHttpPostIn" />
+      <wsdl:output message="tns:AgregaContactoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregaCliente">
+      <wsdl:input message="tns:AgregaClienteHttpPostIn" />
+      <wsdl:output message="tns:AgregaClienteHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaCliente">
+      <wsdl:input message="tns:ConsultaClienteHttpPostIn" />
+      <wsdl:output message="tns:ConsultaClienteHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Contacto">
+      <wsdl:input message="tns:ContactoHttpPostIn" />
+      <wsdl:output message="tns:ContactoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaEstadoPedido">
+      <wsdl:input message="tns:ConsultaEstadoPedidoHttpPostIn" />
+      <wsdl:output message="tns:ConsultaEstadoPedidoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaEstadoCliente">
+      <wsdl:input message="tns:ConsultaEstadoClienteHttpPostIn" />
+      <wsdl:output message="tns:ConsultaEstadoClienteHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaMontoFleteLisa">
+      <wsdl:input message="tns:ConsultaMontoFleteLisaHttpPostIn" />
+      <wsdl:output message="tns:ConsultaMontoFleteLisaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaEjecutivoVentas">
+      <wsdl:input message="tns:ConsultaEjecutivoVentasHttpPostIn" />
+      <wsdl:output message="tns:ConsultaEjecutivoVentasHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCliente">
+      <wsdl:input message="tns:UpdateClienteHttpPostIn" />
+      <wsdl:output message="tns:UpdateClienteHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDireccion">
+      <wsdl:input message="tns:UpdateDireccionHttpPostIn" />
+      <wsdl:output message="tns:UpdateDireccionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDireccion">
+      <wsdl:input message="tns:DeleteDireccionHttpPostIn" />
+      <wsdl:output message="tns:DeleteDireccionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteContacto">
+      <wsdl:input message="tns:DeleteContactoHttpPostIn" />
+      <wsdl:output message="tns:DeleteContactoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCuadroMando">
+      <wsdl:input message="tns:GetCuadroMandoHttpPostIn" />
+      <wsdl:output message="tns:GetCuadroMandoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaPos">
+      <wsdl:input message="tns:ConsultaPosHttpPostIn" />
+      <wsdl:output message="tns:ConsultaPosHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVenedores">
+      <wsdl:input message="tns:GetVenedoresHttpPostIn" />
+      <wsdl:output message="tns:GetVenedoresHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AutentificacionWOP">
+      <wsdl:input message="tns:AutentificacionWOPHttpPostIn" />
+      <wsdl:output message="tns:AutentificacionWOPHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaProductosFiltrados">
+      <wsdl:input message="tns:ConsultaProductosFiltradosHttpPostIn" />
+      <wsdl:output message="tns:ConsultaProductosFiltradosHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaCreditoSteward">
+      <wsdl:input message="tns:ConsultaCreditoStewardHttpPostIn" />
+      <wsdl:output message="tns:ConsultaCreditoStewardHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaTerminosDePago">
+      <wsdl:input message="tns:ConsultaTerminosDePagoHttpPostIn" />
+      <wsdl:output message="tns:ConsultaTerminosDePagoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PerfilCliente">
+      <wsdl:input message="tns:PerfilClienteHttpPostIn" />
+      <wsdl:output message="tns:PerfilClienteHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Folios">
+      <wsdl:input message="tns:FoliosHttpPostIn" />
+      <wsdl:output message="tns:FoliosHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Cobranza">
+      <wsdl:input message="tns:CobranzaHttpPostIn" />
+      <wsdl:output message="tns:CobranzaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Giros">
+      <wsdl:input message="tns:GirosHttpPostIn" />
+      <wsdl:output message="tns:GirosHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FiltroClientes">
+      <wsdl:input message="tns:FiltroClientesHttpPostIn" />
+      <wsdl:output message="tns:FiltroClientesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExistenciaDocumentosPago">
+      <wsdl:input message="tns:ExistenciaDocumentosPagoHttpPostIn" />
+      <wsdl:output message="tns:ExistenciaDocumentosPagoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ModuloExistenciaLisa">
+      <wsdl:input message="tns:ModuloExistenciaLisaHttpPostIn" />
+      <wsdl:output message="tns:ModuloExistenciaLisaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WPL_AdminComprasDespacho">
+      <wsdl:input message="tns:WPL_AdminComprasDespachoHttpPostIn" />
+      <wsdl:output message="tns:WPL_AdminComprasDespachoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WPL_StockBodegaUbicacion">
+      <wsdl:input message="tns:WPL_StockBodegaUbicacionHttpPostIn" />
+      <wsdl:output message="tns:WPL_StockBodegaUbicacionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WPL_ListaBodegas">
+      <wsdl:input message="tns:WPL_ListaBodegasHttpPostIn" />
+      <wsdl:output message="tns:WPL_ListaBodegasHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WPA_ActualizaEstadoContrato">
+      <wsdl:input message="tns:WPA_ActualizaEstadoContratoHttpPostIn" />
+      <wsdl:output message="tns:WPA_ActualizaEstadoContratoHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WS_LisaSoap" type="tns:WS_LisaSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConsultaStock">
+      <soap:operation soapAction="http://steward.cl/wservicesLisaERP/ConsultaStock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaListaPrecio">
+      <soap:operation soapAction="http://steward.cl/wservicesLisaERP/ConsultaListaPrecio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregaDireccion888">
+      <soap:operation soapAction="http://steward.cl/wservicesLisaERP/AgregaDireccion888" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregaDireccion">
+      <soap:operation soapAction="http://steward.cl/wservicesLisaERP/AgregaDireccion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregaContacto">
+      <soap:operation soapAction="http://steward.cl/wservicesLisaERP/AgregaContacto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregaCliente">
+      <soap:operation soapAction="http://steward.cl/wservicesLisaERP/AgregaCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaCliente">
+      <soap:operation soapAction="http://steward.cl/wservicesLisaERP/ConsultaCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Contacto">
+      <soap:operation soapAction="http://steward.cl/wservicesLisaERP/Contacto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaEstadoPedido">
+      <soap:operation soapAction="http://steward.cl/wservicesLisaERP/ConsultaEstadoPedido" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaEstadoCliente">
+      <soap:operation soapAction="http://steward.cl/wservicesLisaERP/ConsultaEstadoCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaMontoFleteLisa">
+      <soap:operation soapAction="http://steward.cl/wservicesLisaERP/ConsultaMontoFleteLisa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaEjecutivoVentas">
+      <soap:operation soapAction="http://steward.cl/wservicesLisaERP/ConsultaEjecutivoVentas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCliente">
+      <soap:operation soapAction="http://steward.cl/wservicesLisaERP/UpdateCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDireccion">
+      <soap:operation soapAction="http://steward.cl/wservicesLisaERP/UpdateDireccion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDireccion">
+      <soap:operation soapAction="http://steward.cl/wservicesLisaERP/DeleteDireccion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteContacto">
+      <soap:operation soapAction="http://steward.cl/wservicesLisaERP/DeleteContacto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCuadroMando">
+      <soap:operation soapAction="http://steward.cl/wservicesLisaERP/GetCuadroMando" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaPos">
+      <soap:operation soapAction="http://steward.cl/wservicesLisaERP/ConsultaPos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVenedores">
+      <soap:operation soapAction="http://steward.cl/wservicesLisaERP/GetVenedores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AutentificacionWOP">
+      <soap:operation soapAction="http://steward.cl/wservicesLisaERP/AutentificacionWOP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaProductosFiltrados">
+      <soap:operation soapAction="http://steward.cl/wservicesLisaERP/ConsultaProductosFiltrados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaCreditoSteward">
+      <soap:operation soapAction="http://steward.cl/wservicesLisaERP/ConsultaCreditoSteward" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaTerminosDePago">
+      <soap:operation soapAction="http://steward.cl/wservicesLisaERP/ConsultaTerminosDePago" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PerfilCliente">
+      <soap:operation soapAction="http://steward.cl/wservicesLisaERP/PerfilCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Folios">
+      <soap:operation soapAction="http://steward.cl/wservicesLisaERP/Folios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Cobranza">
+      <soap:operation soapAction="http://steward.cl/wservicesLisaERP/Cobranza" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Giros">
+      <soap:operation soapAction="http://steward.cl/wservicesLisaERP/Giros" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FiltroClientes">
+      <soap:operation soapAction="http://steward.cl/wservicesLisaERP/FiltroClientes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExistenciaDocumentosPago">
+      <soap:operation soapAction="http://steward.cl/wservicesLisaERP/ExistenciaDocumentosPago" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModuloExistenciaLisa">
+      <soap:operation soapAction="http://steward.cl/wservicesLisaERP/ModuloExistenciaLisa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WPL_AdminComprasDespacho">
+      <soap:operation soapAction="http://steward.cl/wservicesLisaERP/WPL_AdminComprasDespacho" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WPL_StockBodegaUbicacion">
+      <soap:operation soapAction="http://steward.cl/wservicesLisaERP/WPL_StockBodegaUbicacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WPL_ListaBodegas">
+      <soap:operation soapAction="http://steward.cl/wservicesLisaERP/WPL_ListaBodegas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WPA_ActualizaEstadoContrato">
+      <soap:operation soapAction="http://steward.cl/wservicesLisaERP/WPA_ActualizaEstadoContrato" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WS_LisaSoap12" type="tns:WS_LisaSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConsultaStock">
+      <soap12:operation soapAction="http://steward.cl/wservicesLisaERP/ConsultaStock" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaListaPrecio">
+      <soap12:operation soapAction="http://steward.cl/wservicesLisaERP/ConsultaListaPrecio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregaDireccion888">
+      <soap12:operation soapAction="http://steward.cl/wservicesLisaERP/AgregaDireccion888" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregaDireccion">
+      <soap12:operation soapAction="http://steward.cl/wservicesLisaERP/AgregaDireccion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregaContacto">
+      <soap12:operation soapAction="http://steward.cl/wservicesLisaERP/AgregaContacto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregaCliente">
+      <soap12:operation soapAction="http://steward.cl/wservicesLisaERP/AgregaCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaCliente">
+      <soap12:operation soapAction="http://steward.cl/wservicesLisaERP/ConsultaCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Contacto">
+      <soap12:operation soapAction="http://steward.cl/wservicesLisaERP/Contacto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaEstadoPedido">
+      <soap12:operation soapAction="http://steward.cl/wservicesLisaERP/ConsultaEstadoPedido" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaEstadoCliente">
+      <soap12:operation soapAction="http://steward.cl/wservicesLisaERP/ConsultaEstadoCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaMontoFleteLisa">
+      <soap12:operation soapAction="http://steward.cl/wservicesLisaERP/ConsultaMontoFleteLisa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaEjecutivoVentas">
+      <soap12:operation soapAction="http://steward.cl/wservicesLisaERP/ConsultaEjecutivoVentas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCliente">
+      <soap12:operation soapAction="http://steward.cl/wservicesLisaERP/UpdateCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDireccion">
+      <soap12:operation soapAction="http://steward.cl/wservicesLisaERP/UpdateDireccion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDireccion">
+      <soap12:operation soapAction="http://steward.cl/wservicesLisaERP/DeleteDireccion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteContacto">
+      <soap12:operation soapAction="http://steward.cl/wservicesLisaERP/DeleteContacto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCuadroMando">
+      <soap12:operation soapAction="http://steward.cl/wservicesLisaERP/GetCuadroMando" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaPos">
+      <soap12:operation soapAction="http://steward.cl/wservicesLisaERP/ConsultaPos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVenedores">
+      <soap12:operation soapAction="http://steward.cl/wservicesLisaERP/GetVenedores" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AutentificacionWOP">
+      <soap12:operation soapAction="http://steward.cl/wservicesLisaERP/AutentificacionWOP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaProductosFiltrados">
+      <soap12:operation soapAction="http://steward.cl/wservicesLisaERP/ConsultaProductosFiltrados" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaCreditoSteward">
+      <soap12:operation soapAction="http://steward.cl/wservicesLisaERP/ConsultaCreditoSteward" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaTerminosDePago">
+      <soap12:operation soapAction="http://steward.cl/wservicesLisaERP/ConsultaTerminosDePago" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PerfilCliente">
+      <soap12:operation soapAction="http://steward.cl/wservicesLisaERP/PerfilCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Folios">
+      <soap12:operation soapAction="http://steward.cl/wservicesLisaERP/Folios" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Cobranza">
+      <soap12:operation soapAction="http://steward.cl/wservicesLisaERP/Cobranza" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Giros">
+      <soap12:operation soapAction="http://steward.cl/wservicesLisaERP/Giros" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FiltroClientes">
+      <soap12:operation soapAction="http://steward.cl/wservicesLisaERP/FiltroClientes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExistenciaDocumentosPago">
+      <soap12:operation soapAction="http://steward.cl/wservicesLisaERP/ExistenciaDocumentosPago" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModuloExistenciaLisa">
+      <soap12:operation soapAction="http://steward.cl/wservicesLisaERP/ModuloExistenciaLisa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WPL_AdminComprasDespacho">
+      <soap12:operation soapAction="http://steward.cl/wservicesLisaERP/WPL_AdminComprasDespacho" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WPL_StockBodegaUbicacion">
+      <soap12:operation soapAction="http://steward.cl/wservicesLisaERP/WPL_StockBodegaUbicacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WPL_ListaBodegas">
+      <soap12:operation soapAction="http://steward.cl/wservicesLisaERP/WPL_ListaBodegas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WPA_ActualizaEstadoContrato">
+      <soap12:operation soapAction="http://steward.cl/wservicesLisaERP/WPA_ActualizaEstadoContrato" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WS_LisaHttpGet" type="tns:WS_LisaHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="ConsultaStock">
+      <http:operation location="/ConsultaStock" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaListaPrecio">
+      <http:operation location="/ConsultaListaPrecio" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregaDireccion888">
+      <http:operation location="/AgregaDireccion888" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregaDireccion">
+      <http:operation location="/AgregaDireccion" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregaContacto">
+      <http:operation location="/AgregaContacto" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregaCliente">
+      <http:operation location="/AgregaCliente" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaCliente">
+      <http:operation location="/ConsultaCliente" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Contacto">
+      <http:operation location="/Contacto" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaEstadoPedido">
+      <http:operation location="/ConsultaEstadoPedido" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaEstadoCliente">
+      <http:operation location="/ConsultaEstadoCliente" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaMontoFleteLisa">
+      <http:operation location="/ConsultaMontoFleteLisa" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaEjecutivoVentas">
+      <http:operation location="/ConsultaEjecutivoVentas" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCliente">
+      <http:operation location="/UpdateCliente" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDireccion">
+      <http:operation location="/UpdateDireccion" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDireccion">
+      <http:operation location="/DeleteDireccion" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteContacto">
+      <http:operation location="/DeleteContacto" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCuadroMando">
+      <http:operation location="/GetCuadroMando" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaPos">
+      <http:operation location="/ConsultaPos" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVenedores">
+      <http:operation location="/GetVenedores" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AutentificacionWOP">
+      <http:operation location="/AutentificacionWOP" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaProductosFiltrados">
+      <http:operation location="/ConsultaProductosFiltrados" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaCreditoSteward">
+      <http:operation location="/ConsultaCreditoSteward" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaTerminosDePago">
+      <http:operation location="/ConsultaTerminosDePago" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PerfilCliente">
+      <http:operation location="/PerfilCliente" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Folios">
+      <http:operation location="/Folios" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Cobranza">
+      <http:operation location="/Cobranza" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Giros">
+      <http:operation location="/Giros" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FiltroClientes">
+      <http:operation location="/FiltroClientes" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExistenciaDocumentosPago">
+      <http:operation location="/ExistenciaDocumentosPago" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModuloExistenciaLisa">
+      <http:operation location="/ModuloExistenciaLisa" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WPL_AdminComprasDespacho">
+      <http:operation location="/WPL_AdminComprasDespacho" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WPL_StockBodegaUbicacion">
+      <http:operation location="/WPL_StockBodegaUbicacion" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WPL_ListaBodegas">
+      <http:operation location="/WPL_ListaBodegas" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WPA_ActualizaEstadoContrato">
+      <http:operation location="/WPA_ActualizaEstadoContrato" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WS_LisaHttpPost" type="tns:WS_LisaHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="ConsultaStock">
+      <http:operation location="/ConsultaStock" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaListaPrecio">
+      <http:operation location="/ConsultaListaPrecio" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregaDireccion888">
+      <http:operation location="/AgregaDireccion888" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregaDireccion">
+      <http:operation location="/AgregaDireccion" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregaContacto">
+      <http:operation location="/AgregaContacto" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregaCliente">
+      <http:operation location="/AgregaCliente" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaCliente">
+      <http:operation location="/ConsultaCliente" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Contacto">
+      <http:operation location="/Contacto" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaEstadoPedido">
+      <http:operation location="/ConsultaEstadoPedido" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaEstadoCliente">
+      <http:operation location="/ConsultaEstadoCliente" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaMontoFleteLisa">
+      <http:operation location="/ConsultaMontoFleteLisa" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaEjecutivoVentas">
+      <http:operation location="/ConsultaEjecutivoVentas" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCliente">
+      <http:operation location="/UpdateCliente" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDireccion">
+      <http:operation location="/UpdateDireccion" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDireccion">
+      <http:operation location="/DeleteDireccion" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteContacto">
+      <http:operation location="/DeleteContacto" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCuadroMando">
+      <http:operation location="/GetCuadroMando" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaPos">
+      <http:operation location="/ConsultaPos" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVenedores">
+      <http:operation location="/GetVenedores" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AutentificacionWOP">
+      <http:operation location="/AutentificacionWOP" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaProductosFiltrados">
+      <http:operation location="/ConsultaProductosFiltrados" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaCreditoSteward">
+      <http:operation location="/ConsultaCreditoSteward" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaTerminosDePago">
+      <http:operation location="/ConsultaTerminosDePago" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PerfilCliente">
+      <http:operation location="/PerfilCliente" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Folios">
+      <http:operation location="/Folios" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Cobranza">
+      <http:operation location="/Cobranza" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Giros">
+      <http:operation location="/Giros" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FiltroClientes">
+      <http:operation location="/FiltroClientes" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExistenciaDocumentosPago">
+      <http:operation location="/ExistenciaDocumentosPago" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModuloExistenciaLisa">
+      <http:operation location="/ModuloExistenciaLisa" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WPL_AdminComprasDespacho">
+      <http:operation location="/WPL_AdminComprasDespacho" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WPL_StockBodegaUbicacion">
+      <http:operation location="/WPL_StockBodegaUbicacion" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WPL_ListaBodegas">
+      <http:operation location="/WPL_ListaBodegas" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WPA_ActualizaEstadoContrato">
+      <http:operation location="/WPA_ActualizaEstadoContrato" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WS_Lisa">
+    <wsdl:port name="WS_LisaSoap" binding="tns:WS_LisaSoap">
+      <soap:address location="http://192.168.1.230/wslisa/WSLISAERP.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WS_LisaSoap12" binding="tns:WS_LisaSoap12">
+      <soap12:address location="http://192.168.1.230/wslisa/WSLISAERP.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WS_LisaHttpGet" binding="tns:WS_LisaHttpGet">
+      <http:address location="http://192.168.1.230/wslisa/WSLISAERP.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WS_LisaHttpPost" binding="tns:WS_LisaHttpPost">
+      <http:address location="http://192.168.1.230/wslisa/WSLISAERP.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

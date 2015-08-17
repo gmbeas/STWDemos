@@ -1,0 +1,958 @@
+﻿@using GpsWeb2.Collection
+@using System.Web.Mvc.Html;
+@using GpsWeb2.Helpers
+@{
+    ViewBag.Title = "Dashboard - BeyondAdmin";
+    ViewBag.Description = "dashboard - beyondadmin";
+    Layout = "~/Views/Shared/_Default.cshtml";
+}
+@{ var xx = (Dispositivos)ViewBag.Dispositivos;}
+
+
+
+
+<div class="row" style="height: 100%;">
+
+
+    <div class="col-lg-3 col-sm-4 col-xs-4" style="height: 100%;">
+        <div class="widget">
+            <div class="widget-header bordered-bottom bordered-themesecondary">
+                <i class="widget-icon fa fa-tags themesecondary"></i>
+                <span class="widget-caption themesecondary">Vechiculos</span>
+                <div class="widget-buttons">
+                    <span class="input-icon">
+                        <input type="text" class="form-control input-xs solo-numero" id="SearchContrato" placeholder="Buscar contrato...">
+
+                        <i class="glyphicon glyphicon-search circular success"></i>
+                    </span>
+                    @*<a href='@Url.Action("EditaVehiculos", "Home")' data-toggle="config">
+                            <i class="fa fa-cog red"></i>
+                        </a>*@
+                </div>
+
+            </div><!--Widget Header-->
+            <div class="widget-body  no-padding">
+                <div class="tickets-container">
+                    <ul class="tickets-list">
+                        @if (xx.Tabla != null)
+                        {
+                            foreach (var t in xx.Tabla)
+                            {
+                                <li class="ticket-item bordered-success" id="listado_@t.Id">
+                                    <div class="row">
+                                        <div class="ticket-time col-lg-5 col-sm-5">
+                                            <div class="divider hidden-md hidden-sm hidden-xs"></div>
+                                            <i class="fa  fa-circle" style="color: @t.Color"></i>
+                                            <span class="time">@t.Patente</span>
+                                        </div>
+                                        <div class="ticket-time  col-lg-7 col-sm-7 col-xs-12">
+                                            <div class="divider hidden-md hidden-sm hidden-xs"></div>
+                                            <i class="fa fa-clock-o"></i>
+                                            @if (t.FechaHora != null)
+                                            {
+                                                <span onclick='' class="time">@Convert.ToDateTime(t.FechaHora).ToString("dd/MM/yyyy HH:mm")</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="time">sin información</span>
+                                            }
+
+                                        </div>
+
+                                        <div class="ticket-state @t.IconoColor">
+                                            <a href="#" class="tooltip-warning" data-toggle="tooltip" data-placement="right" data-original-title="@t.Valor" onclick="Centra(@t.Id); "><i class="fa @t.Icono "></i></a>
+                                        </div>
+                                    </div>
+                                </li>
+                            }
+                        }
+
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div class="col-lg-9 col-sm-8 col-xs-8" style="height: 100%;">
+        <div class="widget radius-bordered" style="height: 100%;">
+            <div class="widget-header">
+                <span class="widget-caption">Vehículos en mapa</span>
+                <div class="widget-buttons">
+                    <span class="input-icon">
+                        <input type="text" class="form-control input-xs" data-provide="typeahead" id="Search" autocomplete="off" placeholder="Buscar patente...">
+
+                        <i class="glyphicon glyphicon-search circular success"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="widget-body" style="height: 100%;">
+                <div id="nan" style="display: none; height: 10%;">
+                    <div class="well bg-magenta bordered-left bordered-yellow">
+
+                        <p>
+                            With Border on Left
+                        </p>
+                    </div>
+
+                </div>
+                <div id="test" style="width: 100%; height: 100%;"></div>
+               
+            </div>
+           
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+
+<!--Info Modal Templates-->
+<div id="modal-info" class="modal modal-message modal-info fade" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <i class="fa fa-info"></i>
+            </div>
+            <div class="modal-title">Información</div>
+
+            <div class="modal-body">No se han encontrado resultados para tu búsqueda!</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-info" data-dismiss="modal">Aceptar</button>
+            </div>
+        </div> <!-- / .modal-content -->
+    </div> <!-- / .modal-dialog -->
+</div>
+<!--End Info Modal Templates-->
+
+
+<div id="modal-info-contrato" class="modal modal-message modal-info fade" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-title">Información</div>
+
+            <div class="modal-body">
+                No se han encontrado resultados para tu búsqueda!
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-info" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div> <!-- / .modal-content -->
+    </div> <!-- / .modal-dialog -->
+</div>
+
+
+<div id="legend">
+    <div style='margin-bottom: 5px;'><a href='javascript:Cierra(0);' class='btn btn-default btn-circle btn-xs'><i class='fa fa-times'></i></a>
+    </div>
+    <div class='well bg-magenta bordered-left bordered-yellow'>
+        <label id='patente' value='Patente: '></label>
+        <br/><label id='velocidad' value='Velocidad: '></label>
+        <br/><label id='fecha' value='Fecha: '></label>
+        <br/><label id='hora' value='Hora: '></label>
+        <br/><label id='direccion' value='Direccion: '></label>
+        <br/><label id='estado' value='Estado: '></label>
+        <br/>
+        <button type="button" class="btn btn-info" onclick=" GetTodoContratoPatente(); ">Contratos Asociados</button>
+        <br/>
+        <a href="@Url.Action("GeneraRutas", "Home")" class="btn btn-info">Ver Rutas</a>
+    </div>
+</div>
+
+
+ <!--Email Modal Templates-->
+<div id="myModal" style="display:none;">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-hover table-striped table-bordered">
+                <thead class="bordered-blueberry">
+                    <tr>
+                        <th>
+                            #
+                        </th>
+                        <th>
+                            Folio
+                        </th>
+                        <th>
+                            Cliente
+                        </th>
+                        <th>
+                            Estado
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id="tfolios">
+                   
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+<!--End Email Templates-->
+
+
+
+<style>
+    #legend {
+        margin-right: 10px;
+        display: none;
+    }
+     .labels {
+         color: #000000;
+         font-weight: bold;
+         font-size: 14px;
+         opacity: 1;
+         pointer-events: none;
+         text-align: center;
+         width: 64px;
+         white-space: nowrap;
+     }
+
+    .seleccionado {
+        border: 1px solid red;
+    }
+</style>
+
+
+@section PageScripts{
+    <script src="https://maps.googleapis.com/maps/api/js?v=3&sensor=false&libraries=drawing"></script>
+    <script src="http://google-maps-utility-library-v3.googlecode.com/svn/tags/markerwithlabel/1.1.9/src/markerwithlabel.js"></script>
+    <script src="http://underscorejs.org/underscore-min.js"></script>
+    <script src="~/assets/js/bootbox/bootbox.js"></script>
+
+
+    <script src="~/assets/js/bootstrap3-typeahead.js"></script>
+
+
+
+    <script>
+
+        $("#Search").typeahead({
+            source: function(query, process) {
+                var countries = [];
+                mapx = {};
+
+                // This is going to make an HTTP post request to the controller
+                return $.post('@Url.Action("CountryLookup", "Home")', { query: query }, function(data) {
+
+                    // Loop through and push to the array
+                    $.each(data, function(i, country) {
+                        mapx[country.Name] = country;
+                        countries.push(country.Name);
+                    });
+
+                    // Process the details
+                    process(countries);
+                });
+            },
+            updater: function(item) {
+                var selectedShortCode = mapx[item].ShortCode;
+
+                // Set the text to our selected id
+                Centra(selectedShortCode);
+                return item;
+            }
+        });
+
+        $('#SearchContrato').keypress(function(e) {
+            if (e.which == 13) {
+                //$('#modal-info').modal('show');
+                $.ajax({
+                    type: "POST",
+                    async: false,
+                    contentType: "application/json; charset=utf-8",
+                    url: "@Url.Action("BuscaContrato", "Home")",
+                    data: "{'dato':'" + $('#SearchContrato').val() + "'}",
+                    dataType: "json",
+                    success: function(res) {
+                        if (res != "") {
+                            for (var i = 0; i < res.length; i++) {
+                                Centra(res[i].Id);
+                                GeneraPerimetro(res[i].Latitud, res[i].Longitud);
+                            }
+                        } else {
+                            $('#modal-info').modal('show');
+                        }
+
+                    },
+                    error: function(result) {
+                        alert("Error");
+                    }
+                });
+
+
+            }
+        });
+
+        $('.solo-numero').keyup(function() {
+            this.value = (this.value + '').replace(/[^0-9]/g, '');
+        });
+
+        var circle;
+        var mapOverlays = [];
+        var selectedShape;
+        var drawingManager;
+        var markerStore = {};
+        var map;
+        var mapx;
+        var infoWindow;
+        var htmlUpdate = {};
+        var centerid = 0;
+        var contador = true;
+        var bermudaTriangle;
+        var circulo;
+
+        var xpatente;
+        var xvelocidad;
+        var xfecha;
+        var xhora;
+        var xdireccion;
+
+        var homeControlDiv;
+        var homeControl;
+
+
+        $(document).ready(function() {
+
+            //Time between marker refreshes
+            var interval = 5000;
+
+            //Used to remember markers
+
+
+            var myLatlng = new google.maps.LatLng(-33.617859, -71.576181);
+            var myOptions = {
+                zoom: 12,
+                center: myLatlng,
+                mapTypeId: google.maps.MapTypeId.SATELLITE
+            }
+            map = new google.maps.Map(document.getElementById("test"), myOptions);
+
+            var centerControlDiv = document.getElementById('legend');
+            //var centerControl = new CenterControl(centerControlDiv, map);
+
+            centerControlDiv.index = 1;
+            map.controls[google.maps.ControlPosition.RIGHT_TOP].push(centerControlDiv);
+
+            var triangleCoords = [
+                new google.maps.LatLng(-35.78022104534711, -72.46833622455597),
+                new google.maps.LatLng(-35.79581696980588, -72.40035831928253),
+                new google.maps.LatLng(-35.818369945170154, -72.39108860492706),
+                new google.maps.LatLng(-35.81586437528821, -72.43263065814972),
+                new google.maps.LatLng(-35.798601634258965, -72.42507755756378),
+                new google.maps.LatLng(-35.80082929554874, -72.4642163515091),
+                new google.maps.LatLng(-35.798601634258965, -72.4868756532669)
+            ];
+
+            // Construct the polygon
+            bermudaTriangle = new google.maps.Polygon({
+                paths: triangleCoords,
+                draggable: true,
+                editable: true,
+                strokeColor: '#FF0000',
+                strokeOpacity: 0.8,
+                strokeWeight: 2,
+                fillColor: '#FF0000',
+                fillOpacity: 0.35
+            });
+
+            circulo = new google.maps.Circle({
+                center: new google.maps.LatLng(-33.636637, -71.630925000000005),
+                map: map,
+                draggable: true,
+                editable: true,
+                fillColor: '#0000FF',
+                fillOpacity: 0.5,
+                strokeColor: '#0000FF',
+                strokeOpacity: 1.0,
+                strokeWeight: 2
+            });
+
+            circulo.setRadius(1000);
+
+            circulo.setMap(map);
+
+
+            var circulo2 = new google.maps.Circle({
+                center: new google.maps.LatLng(-33.730936999999997, -70.742322000000001),
+                map: map,
+                draggable: true,
+                editable: true,
+                fillColor: '#0000FF',
+                fillOpacity: 0.5,
+                strokeColor: '#0000FF',
+                strokeOpacity: 1.0,
+                strokeWeight: 2
+            });
+
+            circulo2.setRadius(1000);
+
+            circulo2.setMap(map);
+
+            //bermudaTriangle.setMap(map);
+
+            google.maps.event.addListener(circulo, 'click', function(event) {
+                console.log(event.latLng);
+
+            });
+
+            google.maps.event.addListener(circulo2, 'click', function(event) {
+                console.log(event.latLng);
+
+            });
+
+            google.maps.event.addListener(map, "click", function(e) {
+
+                //lat and lng is available in e object
+                var latLng = e.latLng;
+                console.log(latLng);
+            });
+
+
+            var infoWindow = new google.maps.InfoWindow;
+
+
+            function getMarkers() {
+                //console.log('getMarkers');
+                $.get('@Url.Action("GetMarker", "Home")', {}, function(res) {
+
+                    var latlngbounds = new google.maps.LatLngBounds();
+
+                    for (var i = 0; i < res.length; i++) {
+                        var iconx = '@Url.Content("~/assets/img/truck/truck-comodin.png")';
+
+                        var iconDetenido = '@Url.Content("~/assets/img/truck/truck-detenido.png")';
+                        var imageDetenido = {
+                            url: iconDetenido,
+                            // This marker is 20 pixels wide by 32 pixels tall.
+                            size: new google.maps.Size(32, 37),
+                            // The origin for this image is 0,0.
+                            origin: new google.maps.Point(0, 0),
+                            // The anchor for this image is the base of the flagpole at 0,32.
+                            anchor: new google.maps.Point(0, 32)
+                        };
+
+                        var iconSinInfo = '@Url.Content("~/assets/img/truck/truck-sininfo.png")';
+                        var imageSinInfo = {
+                            url: iconSinInfo,
+                            // This marker is 20 pixels wide by 32 pixels tall.
+                            size: new google.maps.Size(32, 37),
+                            // The origin for this image is 0,0.
+                            origin: new google.maps.Point(0, 0),
+                            // The anchor for this image is the base of the flagpole at 0,32.
+                            anchor: new google.maps.Point(0, 32)
+                        };
+
+                        var icon = iconx.replace('comodin', res[i].Color); // + res[i].Icono;
+                        var image = {
+                            url: icon,
+                            // This marker is 20 pixels wide by 32 pixels tall.
+                            size: new google.maps.Size(32, 37),
+                            // The origin for this image is 0,0.
+                            origin: new google.maps.Point(0, 0),
+                            // The anchor for this image is the base of the flagpole at 0,32.
+                            anchor: new google.maps.Point(0, 32)
+                        };
+
+                        var date = new Date(res[i].FechaHora);
+                        var fechaUltima = formatDate(date, 5);
+
+                        var na = GetDireccion(res[i].Curso);
+                        var direxx = '@Url.Action("GeneraRutas", "Home")';
+                        var ui = parseFloat(res[i].Velocidad);
+                        var velocidadF = Math.round(ui * 100) / 100;
+                        var html =
+                            "<div style='width: 230px; height: 220px; overflow-x: hidden;'>" +
+                                "<div class='row'>" +
+                                "<div class='col-lg-12'>" +
+                                "<b>" + "DeviceID: " + res[i].Patente + "</b>" +
+                                "</div>" +
+                                "<div class='col-lg-12'>" +
+                                "Velocidad: " + velocidadF + " Km/h" +
+                                "</div>" +
+                                "<div class='col-lg-12'>" +
+                                "Fecha/Hora: " + fechaUltima +
+                                "</div>" +
+                                "<div class='col-lg-12'>" +
+                                "Dirección: " + na +
+                                "</div>" +
+                                "<div class='col-lg-12' style='margin-top: 10px;'>" +
+                                "<a href='javascript:void(0);' class='btn btn-labeled ' onclick='popup(" + res[i].Id + ");'>" +
+                                "<i class='btn-label fa fa-crosshairs'></i>Seguimiento PopUp</a>" +
+                                "</div>" +
+                                "<div class='col-lg-12' style='margin-top: 10px;'>" +
+                                "<a href='javascript:void(0);' class='btn btn-labeled ' onclick='popup(" + res[i].Id + ");'>" +
+                                "<i class='btn-label fa fa-folder-o'></i>Contratos asociados</a>" +
+                                "</div>" +
+                                "<div class='col-lg-12' style='margin-top: 10px;'>" +
+                                "<a href='" + direxx + "' class='btn btn-labeled' >" +
+                                "<i class='btn-label fa fa-globe'></i>Ver track</a>" +
+                                "</div>" +
+                                "</div>" +
+                                "</div>";
+
+
+                        //Do we have this marker already? any marker not worker!!!
+                        if (markerStore.hasOwnProperty(res[i].Id)) {
+                            markerStore[res[i].Id].setPosition(new google.maps.LatLng(res[i].Latitud, res[i].Longitud));
+
+                            if (res[i].Estado == 2) {
+                                markerStore[res[i].Id].setIcon(imageDetenido);
+                            } else if (res[i].Estado == 5) {
+                                markerStore[res[i].Id].setIcon(imageSinInfo);
+                            } else if (res[i].Estado == 1) {
+                                markerStore[res[i].Id].setIcon(image);
+                            }
+
+
+                            if (centerid == res[i].Id) {
+                                var fh = fechaUltima.split(' ');
+                                map.setCenter(markerStore[centerid].getPosition());
+                                $('#legend').show();
+                                //bindInfoWindowOpen(markerStore[res[i].Id], map, infoWindow, html, res[i].Id);
+                                $('#patente').text("Patente: " + res[i].Patente);
+                                $('#velocidad').text("Velocidad: " + velocidadF);
+                                $('#fecha').text("Fecha: " + fh[0]);
+                                $('#hora').text("Hora: " + fh[1]);
+                                $('#direccion').text("Direccion: " + na);
+                                if (velocidadF > 0) {
+                                    $('#estado').text("Estado: Movimiento");
+                                } else {
+                                    $('#estado').text("Estado: Detenido");
+                                }
+
+                            } else {
+                                //bindInfoWindow(markerStore[res[i].Id], map, infoWindow, html, res[i].Id);
+                            }
+
+                        } else {
+                            latlngbounds.extend(new google.maps.LatLng(res[i].Latitud, res[i].Longitud));
+
+                            var marker = new MarkerWithLabel({
+                                position: new google.maps.LatLng(res[i].Latitud, res[i].Longitud),
+                                title: res[i].name,
+                                map: map,
+                                icon: image,
+                                labelContent: res[i].Patente,
+                                labelAnchor: new google.maps.Point(15, -2),
+                                labelClass: "labels", // the CSS class for the label</b>
+                                labelStyle: { opacity: 0.75 }
+
+                            });
+                            bindInfoWindow(marker, map, infoWindow, html, res[i].Id);
+                            markerStore[res[i].Id] = marker;
+
+                        }
+                    }
+                    if (contador == true) {
+                        contador = false;
+                        map.fitBounds(latlngbounds);
+                    }
+
+                    window.setTimeout(getMarkers, interval);
+                }, "json");
+            }
+
+            getMarkers();
+
+
+        });
+
+        function popup(id) {
+            var url1 = '@Url.Action("PopUpDispositivo", "Home")';
+
+            var url = url1 + '/' + id;
+            window.open(url, "popupWindow_" + id, "location=0,menubar=0,resizable=0,scrollbars=0,status=0,toolbar=0,width=600,height=600");
+
+            //return false;
+        }
+
+
+        $('#pruena').click(function() {
+            //drawingManager.setMap(null);
+
+            if (drawingManager == null) {
+                var polyOptions = {
+                    strokeWeight: 0,
+                    fillOpacity: 0.45,
+                    editable: true,
+                    draggable: true
+                };
+                // Creates a drawing manager attached to the map that allows the user to draw
+                // markers, lines, and shapes.
+                drawingManager = new google.maps.drawing.DrawingManager({
+                    drawingControl: true,
+                    drawingControlOptions: {
+                        position: google.maps.ControlPosition.TOP_CENTER,
+                        drawingModes: [
+                            google.maps.drawing.OverlayType.CIRCLE,
+                            google.maps.drawing.OverlayType.POLYGON,
+                            google.maps.drawing.OverlayType.RECTANGLE
+                        ]
+                    },
+                    rectangleOptions: polyOptions,
+                    circleOptions: polyOptions,
+                    polygonOptions: polyOptions,
+                    map: map
+                });
+
+                google.maps.event.addListener(drawingManager, 'overlaycomplete', function(e) {
+                    if (e.type !== google.maps.drawing.OverlayType.MARKER) {
+                        // Switch back to non-drawing mode after drawing a shape.
+                        drawingManager.setDrawingMode(null);
+
+                        // Add an event listener that selects the newly-drawn shape when the user
+                        // mouses down on it.
+                        var newShape = e.overlay;
+                        newShape.type = e.type;
+                        google.maps.event.addListener(newShape, 'click', function(e) {
+                            if (e.vertex !== undefined) {
+                                if (newShape.type === google.maps.drawing.OverlayType.POLYGON) {
+                                    var path = newShape.getPaths().getAt(e.path);
+                                    path.removeAt(e.vertex);
+                                    if (path.length < 3) {
+                                        newShape.setMap(null);
+                                    }
+                                }
+                                if (newShape.type === google.maps.drawing.OverlayType.POLYLINE) {
+                                    var path = newShape.getPath();
+                                    path.removeAt(e.vertex);
+                                    if (path.length < 2) {
+                                        newShape.setMap(null);
+                                    }
+                                }
+                            }
+                            setSelection(newShape);
+                        });
+                        setSelection(newShape);
+                    }
+                });
+
+                google.maps.event.addDomListener(document.getElementById('reset'), 'click', deleteSelectedShape);
+                google.maps.event.addDomListener(document.getElementById('CoordsButton'), 'click', GetCoordenadas);
+            }
+        });
+
+        function setSelection(shape) {
+            clearSelection();
+            selectedShape = shape;
+            shape.setEditable(true);
+            // selectColor(shape.get('fillColor') || shape.get('strokeColor'));
+        }
+
+
+        function clearSelection() {
+            if (selectedShape) {
+                selectedShape.setEditable(false);
+                selectedShape = null;
+            }
+        }
+
+        function GetCoordenadas() {
+            console.log(selectedShape);
+
+            if (selectedShape.type == "circle") { //CIRCLE
+                console.log(selectedShape.radius + " | " + selectedShape.center.k + " | " + selectedShape.center.B);
+            } else if (selectedShape.type == "rectangle") {
+                var len = selectedShape.D.k.j.length;
+                for (i = 0; i < len; i++) {
+                    console.log(selectedShape.D.k.j[i].k + " | " + selectedShape.D.k.j[i].B);
+                }
+            } else if (selectedShape.type == "polygon") {
+                var len = selectedShape.latLngs.j[0].j.length;
+                for (i = 0; i < len; i++) {
+                    console.log(selectedShape.latLngs.j[0].j[i].k + " | " + selectedShape.latLngs.j[0].j[i].B);
+                }
+            }
+
+
+            //RECTANGLE
+            //var len = selectedShape.D.k.j.length;
+
+            //for (i = 0; i < len; i++) {
+            //    console.log(selectedShape.D.k.j[i].k + " | " + selectedShape.D.k.j[i].B);
+            //}
+
+
+            //POLYGON
+            //var len = selectedShape.latLngs.j[0].j.length;
+
+            //for (i = 0; i < len; i++) {
+            //    console.log(selectedShape.latLngs.j[0].j[i].k + " | " + selectedShape.latLngs.j[0].j[i].B);
+            //}
+        }
+
+        function deleteSelectedShape() {
+            if (selectedShape) {
+                selectedShape.setMap(null);
+            }
+        }
+
+
+        function Centra(id) {
+
+            $("#listado_" + centerid).removeClass("seleccionado");
+            $("#listado_" + id).addClass("seleccionado");
+
+            centerid = id;
+
+            $('#legend').hide();
+            //$("#test").css("height", '90%');
+
+            //$('#nan').show();
+
+
+            //homeControlDiv = document.createElement('div');
+
+            //console.log(homeControlDiv);
+
+            //homeControl = new CenterControl(homeControlDiv, map);
+            //homeControlDiv.index = 1;
+
+            ////map.controls[google.maps.ControlPosition.RIGHT_TOP].removeAt(1);
+
+
+            //map.controls[google.maps.ControlPosition.RIGHT_TOP].push(homeControlDiv);
+
+
+//var centerControlDiv = document.getElementById('legend');
+            //if (centerControlDiv.index === 1) {
+            //    map.controls[google.maps.ControlPosition.RIGHT_TOP].removeAt(1);
+            //}
+            //$('#legends').show();
+            //var centerControl = new CenterControl(centerControlDiv, map);
+
+            //map.controls[google.maps.ControlPosition.RIGHT_TOP].setAt(1, centerControlDiv);
+
+
+        }
+
+        function Cierra() {
+            //var indexOfControl = null,
+            //   bottomCenterControls = map.controls[google.maps.ControlPosition.RIGHT_TOP];
+            //bottomCenterControls.forEach(function (element,
+            //                                         index) {
+            //    if (element.id === 'legend') {
+            //        indexOfControl = index;
+            //    }
+            //});
+            //if (indexOfControl) {
+            //    bottomCenterControls.removeAt(indexOfControl);
+            //}
+            $('#legend').hide();
+            $("#listado_" + centerid).removeClass("seleccionado");
+
+            centerid = 0;
+        }
+
+
+        function bindInfoWindow(marker, map, infoWindow, html, id) {
+            google.maps.event.addListener(marker, 'click', function() {
+                Centra(id);
+            });
+        }
+
+
+        var radius; // Radius of circle in miles.
+        var draw_circle = null;
+        var center; // LatLng of center point of circle
+        function GeneraPerimetro(latitud, longitud) {
+
+            circle = new google.maps.Circle({
+                center: new google.maps.LatLng(latitud.replace(",", "."), longitud.replace(",", ".")),
+                map: map,
+                draggable: false,
+                editable: false,
+                fillColor: '#0000FF',
+                fillOpacity: 0.5,
+                strokeColor: '#0000FF',
+                strokeOpacity: 1.0,
+                strokeWeight: 2
+            });
+
+            circle.setRadius(550);
+
+            circle.setMap(map);
+        }
+
+        function formatDate(dateObj, format) {
+            var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            var curr_date = dateObj.getDate();
+            var curr_month = dateObj.getMonth();
+            curr_month = curr_month + 1;
+            var curr_year = dateObj.getFullYear();
+            var curr_min = dateObj.getMinutes();
+            var curr_hr = dateObj.getHours();
+            var curr_sc = dateObj.getSeconds();
+            if (curr_month.toString().length == 1)
+                curr_month = '0' + curr_month;
+            if (curr_date.toString().length == 1)
+                curr_date = '0' + curr_date;
+            if (curr_hr.toString().length == 1)
+                curr_hr = '0' + curr_hr;
+            if (curr_min.toString().length == 1)
+                curr_min = '0' + curr_min;
+
+            if (format == 1) //dd-mm-yyyy
+            {
+                return curr_date + "-" + curr_month + "-" + curr_year;
+            } else if (format == 2) //yyyy-mm-dd
+            {
+                return curr_year + "-" + curr_month + "-" + curr_date;
+            } else if (format == 3) //dd/mm/yyyy
+            {
+                return curr_date + "/" + curr_month + "/" + curr_year;
+            } else if (format == 4) // MM/dd/yyyy HH:mm:ss
+            {
+                return curr_month + "/" + curr_date + "/" + curr_year + " " + curr_hr + ":" + curr_min + ":" + curr_sc;
+            } else if (format == 5) // dd/MM/yyyy HH:mm:ss
+            {
+                return curr_date + "/" + curr_month + "/" + curr_year + " " + curr_hr + ":" + curr_min + ":" + curr_sc;
+            }
+        }
+
+
+        function GetTodoContratoPatente() {
+            var af = $('#patente').text();
+            var nn = af.split(' ');
+            $.ajax({
+                type: "POST",
+                async: false,
+                contentType: "application/json; charset=utf-8",
+                url: "@Url.Action("GetContratosPatente", "Home")",
+                data: "{'patente':'" + nn[1] + "'}",
+                dataType: "json",
+                success: function(rs) {
+                    //alert(rs);
+                    var pp = "";
+                    var x = 1;
+                    for (var key in rs.TablaContrato) {
+                        var obj = rs.TablaContrato[key];
+                        pp = pp + " <tr><td>" + x + "</td><td>" + obj["Folio"] + "</td><td>" + obj["CodCliente"] + "</td><td>" + obj["EstadoWop"] + "</td></tr>";
+                        x++;
+                    }
+
+                    $('#tfolios').html(pp);
+
+                    bootbox.dialog({
+                        message: $("#myModal").html(),
+                        title: "Contratos " + nn[1],
+                        className: "modal-darkorange",
+                        buttons: {
+                            success: {
+                                label: "OK",
+                                className: "btn-blue",
+                                callback: function() {}
+                            }
+                        }
+                    });
+                },
+                error: function(result) {
+                    alert("Error");
+                }
+            });
+        }
+
+        function GetDireccion(dato) {
+            var data;
+            $.ajax({
+                type: "POST",
+                async: false,
+                contentType: "application/json; charset=utf-8",
+                url: "@Url.Action("GetDireccion", "Home")",
+                data: "{'dato':'" + dato + "'}",
+                dataType: "json",
+                success: function (rs) {
+                    //alert(rs);
+                    data = rs;
+                    //callback.call(data);
+                },
+                error: function (result) {
+                    alert("Error");
+                }
+            });
+
+            return data;
+        }
+
+        function CenterControl(controlDiv, map) {
+            controlDiv.id = "prueba";
+            controlDiv.style.display = 'none';
+            // Set CSS for the control border
+            var controlUI = document.createElement('div');
+            controlUI.style.backgroundColor = '#fff';
+            controlUI.style.border = '2px solid #fff';
+            controlUI.style.borderRadius = '3px';
+            controlUI.style.boxShadow = '0 2px 6px rgba(0,0,0,.3)';
+            controlUI.style.cursor = 'pointer';
+            controlUI.style.marginBottom = '22px';
+            controlUI.style.textAlign = 'center';
+            controlUI.title = 'Click to recenter the map';
+            controlDiv.appendChild(controlUI);
+
+            // Set CSS for the control interior
+            var controlText = document.createElement('div');
+            controlText.style.color = 'rgb(25,25,25)';
+            controlText.style.fontFamily = 'Roboto,Arial,sans-serif';
+            controlText.style.fontSize = '16px';
+            controlText.style.lineHeight = '38px';
+            controlText.style.paddingLeft = '5px';
+           
+            controlText.style.paddingRight = '5px';
+            controlText.innerHTML = 'Center Map';
+            controlUI.appendChild(controlText);
+
+           
+
+        }
+
+
+        //function CenterControl(controlDiv, map) {
+
+        //    var pp = '<div style=\'margin-bottom:5px;\'><a href=\'javascript:Centra(0,1);\' class=\'btn btn-default  btn-circle btn-xs\'><i class=\'fa fa-times\'></i></a></div>' +
+        //       '<div class=\'well bg-magenta bordered-left bordered-yellow\'>' +
+        //       '<label id=\'patente\' value=\'Patente: \'></label>' +
+        //       '<br/><label id=\'velocidad\' value=\'Velocidad: \'></label>' +
+        //       '<br/><label id=\'fecha\' value=\'Fecha: \'></label>' +
+        //       '<br/><label id=\'hora\' value=\'Hora: \'></label>' +
+        //       '<br/><label id=\'direccion\' value=\'Direccion: \'></label>' +
+        //       '<br/><label id=\'estado\' value=\'Estado: \'></label>' +
+        //       '<br/>' +
+        //       '</div> ';
+
+
+        //    controlDiv.style.padding = '5px';
+            
+
+        //    var controlUI = document.createElement('div');
+        //    controlDiv.appendChild(controlUI);
+
+        //    var controlText = document.createElement('div');
+        //    controlText.style.fontFamily = 'Arial,sans-serif';
+        //    controlText.style.fontSize = '12px';
+        //    controlText.style.paddingLeft = '4px';
+        //    controlText.style.paddingRight = '4px';
+            
+        //    controlText.innerHTML = pp;
+        //    controlUI.appendChild(controlText);
+
+        //}
+
+
+        $("#bootbox-options").on('click', function () {
+            
+        });
+
+
+
+
+    </script>
+}
+

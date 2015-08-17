@@ -1,0 +1,373 @@
+﻿@using GpsWeb2.Collection
+
+@{
+    ViewBag.Title = "EditaVehiculosa";
+    Layout = "~/Views/Shared/_Default.cshtml";
+}
+@{ var xx = (Dispositivos) ViewBag.Dispositivos;}
+
+<div class="row">
+    <div class="col-xs-12 col-md-7">
+
+        <div class="widget">
+            <div class="widget-header bg-palegreen">
+                <i class="widget-icon fa fa-truck"></i>
+                <span class="widget-caption">Vehiculos</span>
+                <div class="widget-buttons">
+                    <a href="#" onclick="Nuevo()" data-toggle="config">
+                        <i class="fa  fa-plus"></i>
+                    </a>
+                </div><!--Widget Buttons-->
+            </div><!--Widget Header-->
+            <div class="widget-body">
+                <table class="table table-hover table-striped table-bordered">
+                    <thead class="bordered-blueberry">
+                        <tr>
+                            <th>
+                                id
+                            </th>
+                            <th>
+                                Nombre
+                            </th>
+                            <th>
+                                Modelo
+                            </th>
+                            <th>
+                                Patente
+                            </th>
+                            <th>
+                                Imei
+                            </th>
+                            <th>
+                                Color
+                            </th>
+                            <th>
+                                Estado
+                            </th>
+                            <th>
+
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    @if (xx.Tabla != null)
+                    {
+                        foreach (var t in xx.Tabla)
+                        {
+                            <tr>
+                                <td>
+                                    @t.Id
+                                </td>
+                                <td>
+                                    @t.Nombre
+                                </td>
+                                <td>
+                                    @t.Modelo
+                                </td>
+                                <td>
+                                    @t.Patente
+                                </td>
+                                <td>
+                                    @t.Imei
+                                </td>
+                                <td class="text-align-center">
+                                    <i class="fa  fa-circle" style="color: @t.Color"></i>
+                                </td>
+                                <td>
+                                    @t.Estado
+                                </td>
+                                <td class="text-align-center">
+                                    <a href="#" onclick=" Edita(@t.Id) " class=" btn btn-info btn-xs edit"><i class="fa fa-edit"></i></a>
+                                    <a href="#" onclick=" Elimina(@t.Id) " class=" btn btn-danger btn-xs delete"><i class="fa fa-trash-o"></i></a>
+                                    <a href="#" onclick=" Activo(@t.Id) " class=" btn btn-warning btn-xs delete"><i class="fa fa-chevron-down"></i></a>
+
+                                </td>
+                            </tr>
+                        }
+                    }
+
+                    </tbody>
+                </table>
+
+            </div><!--Widget Body-->
+        </div><!--Widget-->
+
+    </div>
+
+    <div class="col-lg-1"></div>
+    <div class="col-lg-4">
+        <div id="formulario" style="display: none;">
+            <form role="form" id="formulito">
+                <div class="form-title">
+                    Datos del vehiculo
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <span class="input-icon icon-right">
+                                <input type="text" class="form-control" placeholder="Nombre" id="nombre">
+                                <i class="fa fa-user blue"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <span class="input-icon icon-right">
+                                <input type="text" class="form-control" placeholder="Modelo" id="modelo">
+                                <i class="fa fa-info blue"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <span class="input-icon icon-right">
+                                <input type="text" class="form-control" placeholder="Patente" id="patente">
+                                <i class="fa fa-truck blue"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <span class="input-icon icon-right">
+                                <input type="text" class="form-control" placeholder="Imei" id="imei">
+                                <i class="fa fa-briefcase blue"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <span class="input-icon icon-right">
+                                <input type="text" class="form-control" placeholder="Numero" id="numero">
+                                <i class="fa fa-mobile-phone blue"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+
+                        <div class="form-group">
+                            <label for="colorselector_1" class="col-sm-2 control-label no-padding-right">Color</label>
+                            <div class="col-sm-10">
+                                <select id="colorselector_1"></select>
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-sm-12" style="margin-top: 10px;">
+                        <div class="form-group">
+                            <label for="activo" class="col-sm-2 control-label no-padding-right">Activo</label>
+                            <div class="col-sm-10">
+                                <label>
+                                    <input class="checkbox-slider toggle yesno" type="checkbox" id="activo">
+                                    <span class="text"></span>
+                                </label>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <button type="button" class="btn btn-primary" id="guardar">Guardar</button>
+            </form>
+        </div>
+    </div>
+    <div class="col-lg-1"></div>
+
+
+</div>
+
+
+@section PageScripts{
+    <link href=" http://bootstrap-colorselector.flaute.com/lib/bootstrap-colorselector-0.2.0/css/bootstrap-colorselector.css" rel="stylesheet"/>
+
+    <script src="http://bootstrap-colorselector.flaute.com/lib/bootstrap-colorselector-0.2.0/js/bootstrap-colorselector.js"></script>
+
+    <script>
+
+        var iddispositivo;
+        var colorid = 0;
+        var tipo;
+
+        $("#guardar").click(function(e) {
+            if (tipo == 1) {
+                UpdateInfoDispositivo();
+            } else {
+                InsertaInfoDispositivo();
+            }
+
+
+        });
+
+        function Nuevo() {
+            Reset();
+            tipo = 2;
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: "@Url.Action("GetColores", "Home")",
+                data: "{}",
+                dataType: "json",
+                success: function(r) {
+                    $('#colorselector_1').empty();
+                    for (var k in r) {
+                        $('#colorselector_1').append('<option value="' + r[k].Id + '" data-color="#' + r[k].Hexa + '">' + r[k].Valor + '</option>');
+                    }
+
+                    $('#colorselector_1').colorselector('setValue', 1);
+
+                },
+                error: function(result) {
+                    alert("Error");
+                }
+            });
+            $('#formulario').show();
+        }
+
+
+        function Reset() {
+            $('#nombre').val("");
+            $('#modelo').val("");
+            $('#patente').val("");
+            $('#imei').val("");
+            $('#numero').val("");
+            colorid = 1;
+            $('#activo').removeAttr('checked');
+        }
+
+        function InsertaInfoDispositivo() {
+            var nombre = $('#nombre').val();
+            var modelo = $('#modelo').val();
+            var patente = $('#patente').val();
+            var imei = $('#imei').val();
+            var numero = $('#numero').val();
+            var activo = $("#activo").is(':checked') ? 1 : 2;
+            var color = $('#colorselector_1').val();
+
+
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: "@Url.Action("InsertaDispositivo", "Home")",
+                data: "{'nombre':'" + nombre + "','modelo':'" + modelo + "','patente':'" + patente + "','imei':'" + imei + "','numero':'" + numero + "','activo':'" + activo + "','color':'" + color + "'}",
+            dataType: "json",
+            success: function(r) {
+                location.reload();
+            },
+            error: function(result) {
+                alert("Error");
+            }
+        });
+        }
+
+
+        function UpdateInfoDispositivo() {
+            var nombre = $('#nombre').val();
+            var modelo = $('#modelo').val();
+            var patente = $('#patente').val();
+            var imei = $('#imei').val();
+            var numero = $('#numero').val();
+            var activo = $("#activo").is(':checked') ? 1 : 2;
+            var color = $('#colorselector_1').val();
+
+
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: "@Url.Action("UpdateDispositivo", "Home")",
+                data: "{'id':'" + iddispositivo + "','nombre':'" + nombre + "','modelo':'" + modelo + "','patente':'" + patente + "','imei':'" + imei + "','numero':'" + numero + "','activo':'" + activo + "','color':'" + color + "'}",
+                dataType: "json",
+                success: function(r) {
+                    location.reload();
+                },
+                error: function(result) {
+                    alert("Error");
+                }
+            });
+        }
+
+        function Edita(id) {
+            Reset();
+            tipo = 1;
+            iddispositivo = id;
+            $.ajax({
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                url: "@Url.Action("GetDispositivo", "Home")",
+                data: "{'id':'" + id + "'}",
+                dataType: "json",
+                success: function(r) {
+                    $('#nombre').val(r[0].Nombre);
+                    $('#modelo').val(r[0].Modelo);
+                    $('#patente').val(r[0].Patente);
+                    $('#imei').val(r[0].Imei);
+                    $('#numero').val(r[0].Numero);
+
+                    if (parseInt(r[0].ColorId) != 0)
+                        colorid = r[0].ColorId;
+
+                    var activo = r[0].Estado;
+                    //alert($("#activo").is(':checked'));
+
+                    if (parseInt(activo) == 1) {
+                        $('#activo').prop('checked', 'checked');
+                    } else if (parseInt(activo) == 2) {
+                        $('#activo').removeAttr('checked');
+                    }
+
+                    $.ajax({
+                        type: "POST",
+                        contentType: "application/json; charset=utf-8",
+                        url: "@Url.Action("GetColores", "Home")",
+                        data: "{}",
+                        dataType: "json",
+                        success: function(r) {
+                            $('#colorselector_1').empty();
+                            for (var k in r) {
+                                $('#colorselector_1').append('<option value="' + r[k].Id + '" data-color="#' + r[k].Hexa + '">' + r[k].Valor + '</option>');
+                            }
+
+                            $('#colorselector_1').colorselector('setValue', parseInt(colorid));
+
+                        },
+                        error: function(result) {
+                            alert("Error");
+                        }
+                    });
+
+
+                    $('#formulario').show();
+                },
+                error: function(result) {
+                    alert("Error");
+                }
+            });
+
+
+        }
+    </script>
+
+
+}

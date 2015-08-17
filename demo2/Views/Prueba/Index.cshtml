@@ -1,0 +1,26 @@
+﻿@using DotNet.Highcharts
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+
+</head>
+<body>
+<div>
+
+    @((Highcharts) ViewBag.grafico)
+    @((Highcharts)ViewBag.grafico2)
+</div>
+
+
+</body>
+</html>
