@@ -14,6 +14,45 @@ namespace WcfWebNueva
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class ServiceSTW : IServiceSTW
     {
+        public List<ArbolProductosMas> MasCompradosProductos(int tieid, string skus)
+        {
+            var dslst = DbGeneral.WPL_Sku_Atributos("VCM", 'X', 'N', "STE", skus, 1, tieid, "", 1, "", "", "", "", "", "", "",
+                "N", 1, "", "", 0, "");
+
+            var lst = dslst.Tables[0].ToList<ArbolProductosMas>();
+
+            return lst;
+        }
+        public List<ArbolProductosMas> MasCompradosFicha(int tieid, string sku)
+        {
+            var ds = DbGeneral.WPL_POW_Arbol("SKU", tieid, "", 1, "", sku, "", "");
+            var dr = ds.Tables[0].Rows[0];
+            var skuid = dr["Sku_Id"].ToString();
+
+            var dslst = DbGeneral.WPL_Sku_Atributos("VCM", 'X', 'N', "STE", skuid, 1, tieid, "", 1, "", "", "", "", "", "", "",
+                "N", 1, "", "", 0, "");
+
+            var lst = dslst.Tables[0].ToList<ArbolProductosMas>();
+
+            return lst;
+        }
+
+        public List<ArbolProductosOfe> RecienLlegados(int tieid)
+        {
+            var ds = DbGeneral.WPL_Sku_Atributos("LAN", 'X', 'N', "STE", "", 1, tieid, "", 1, "", "", "", "", "", "", "",
+                "N", 1, "", "", 0, "");
+            var lst = ds.Tables[0].ToList<ArbolProductosOfe>();
+            return lst;
+        }
+
+        public List<ArbolProductosOfe> Ofertas(int tieid, string codofer)
+        {
+            var ds = DbGeneral.WPL_Sku_Atributos("OFE", 'X', 'N', "STE", "", 1, tieid, "", 1, "", "", "", "", "", "", "",
+                "N", 1, "", "", 0, codofer);
+            var lst = ds.Tables[0].ToList<ArbolProductosOfe>();
+            return lst;
+        }
+
         public List<DemoNivelModel> DemoNiveles(int tieid, string arbol, string nivel)
         {
             //'CPF', 29 ,'49806,49817' ,0,'','','1'

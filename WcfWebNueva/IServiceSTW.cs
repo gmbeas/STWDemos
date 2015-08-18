@@ -13,6 +13,46 @@ namespace WcfWebNueva
     [ServiceContract]
     public interface IServiceSTW
     {
+
+        [OperationContract]
+        [WebInvoke(Method = "GET",
+          ResponseFormat = WebMessageFormat.Json,
+          BodyStyle = WebMessageBodyStyle.Wrapped,
+          UriTemplate =
+              "MasCompradosProductosJSON?tieid={tieid}&skus={skus}"
+          )]
+        List<ArbolProductosMas> MasCompradosProductos(int tieid, string skus);
+
+
+        [OperationContract]
+        [WebInvoke(Method = "GET",
+          ResponseFormat = WebMessageFormat.Json,
+          BodyStyle = WebMessageBodyStyle.Wrapped,
+          UriTemplate =
+              "MasCompradosFichaJSON?tieid={tieid}&sku={sku}"
+          )]
+        List<ArbolProductosMas> MasCompradosFicha(int tieid, string sku);
+
+
+        [OperationContract]
+        [WebInvoke(Method = "GET",
+           ResponseFormat = WebMessageFormat.Json,
+           BodyStyle = WebMessageBodyStyle.Wrapped,
+           UriTemplate =
+               "RecienLlegadosJSON?tieid={tieid}"
+           )]
+        List<ArbolProductosOfe> RecienLlegados(int tieid);
+
+        [OperationContract]
+        [WebInvoke(Method = "GET",
+           ResponseFormat = WebMessageFormat.Json,
+           BodyStyle = WebMessageBodyStyle.Wrapped,
+           UriTemplate =
+               "OfertasJSON?tieid={tieid}&codofer={codofer}"
+           )]
+        List<ArbolProductosOfe> Ofertas(int tieid, string codofer);
+
+
         [OperationContract]
         [WebInvoke(Method = "GET",
             ResponseFormat = WebMessageFormat.Json,
@@ -1210,5 +1250,102 @@ namespace WcfWebNueva
         public string Foto { get; set; }      
     }
     #endregion
-    
+
+
+
+    #region ArbolProductosOfe
+    [DataContract]
+    public class ArbolProductosMas
+    {
+        
+
+        [DataMember]
+        public int Sku_Id { get; set; }
+
+        [DataMember]
+        public string Sku { get; set; }
+
+        [DataMember]
+        public string NombreSku { get; set; }
+        
+        [DataMember]
+        public string Stock { get; set; }
+
+        [DataMember]
+        public int Lista { get; set; }
+
+        [DataMember]
+        public double PrecioUnidad { get; set; }
+        
+        [DataMember]
+        public int FactorUm { get; set; }
+
+        [DataMember]
+        public string Um { get; set; }
+        
+
+        [DataMember]
+        public double Precio { get; set; }
+
+        
+
+        [DataMember]
+        public string Foto { get; set; }
+    }
+    #endregion      
+
+
+    #region ArbolProductosOfe
+    [DataContract]
+    public class ArbolProductosOfe
+    {
+        [DataMember]
+        public int Activo { get; set; }
+
+        [DataMember]
+        public int Sku_Id { get; set; }
+
+        [DataMember]
+        public string Sku { get; set; }
+
+        [DataMember]
+        public string NombreSku { get; set; }
+
+        [DataMember]
+        public string NombreWeb { get; set; }
+
+        [DataMember]
+        public string Stock { get; set; }
+
+        [DataMember]
+        public int Lista { get; set; }
+
+        [DataMember]
+        public double PrecioUnidad { get; set; }
+
+        [DataMember]
+        public double PrecioUnidadBruto { get; set; }
+
+        [DataMember]
+        public int FactorUm { get; set; }
+
+        [DataMember]
+        public string Um { get; set; }
+
+        [DataMember]
+        public int Unidades { get; set; }
+
+        [DataMember]
+        public double Precio { get; set; }
+
+        [DataMember]
+        public double PrecioBruto { get; set; }
+
+        [DataMember]
+        public double Iva { get; set; }
+
+        [DataMember]
+        public string Foto { get; set; }
+    }
+    #endregion      
 }
